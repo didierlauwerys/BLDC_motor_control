@@ -49,10 +49,6 @@
 #include "platform.h"
 #include "xil_printf.h"
 
-int init_motor()
-{
-	return 0;
-}
 int init_adc()
 {
 	return 0;

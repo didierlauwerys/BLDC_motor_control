@@ -49,33 +49,12 @@
 #include "platform.h"
 #include "xil_printf.h"
 
-int init_motor()
-{
-	return 0;
-}
-int init_adc()
-{
-	return 0;
-}
-int init_gpio()
-{
-	return 0;
-}
-int start_stepper_mode()
-{
-	return 0;
-}
-
 
 int main()
 {
     init_platform();
 
     print("Hello World\n\r");
-
-    init_adc();
-    init_gpio();
-    start_stepper_mode();
 
     cleanup_platform();
     return 0;
