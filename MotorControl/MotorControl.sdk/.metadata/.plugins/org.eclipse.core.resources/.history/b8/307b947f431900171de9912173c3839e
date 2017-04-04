@@ -125,7 +125,7 @@ int init_gpio()
 	*BTNS_SLDR_GIER		=	0x00000000;
 	*BTNS_TRI			=	0x0000000F;
 	*SLDR_TRI			=	0x0000000F;
-	*BTNS_SLDR_IPIER	=	0x00000003;
+	*LEDS_SPY_IPIER		=	0x00000003;
 	xil_printf("GPIO initialized\n");
 	return 0;
 }

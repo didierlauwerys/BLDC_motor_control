@@ -1,4 +1,4 @@
-16:17:10 **** Auto Build of configuration Debug for project motorcontrol ****
+16:32:15 **** Auto Build of configuration Debug for project motorcontrol ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -23,29 +23,14 @@ arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcp
 ../src/helloworld.c:75:22: warning: 'BTNS_DATA' defined but not used [-Wunused-variable]
  static volatile u32 *BTNS_DATA   = (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000000);
                       ^
-../src/helloworld.c:76:22: warning: 'BTNS_TRI' defined but not used [-Wunused-variable]
- static volatile u32 *BTNS_TRI   = (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000004);
-                      ^
 ../src/helloworld.c:77:22: warning: 'SLDR_DATA' defined but not used [-Wunused-variable]
  static volatile u32 *SLDR_DATA   = (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000008);
-                      ^
-../src/helloworld.c:78:22: warning: 'SLDR_TRI' defined but not used [-Wunused-variable]
- static volatile u32 *SLDR_TRI   = (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x0000000C);
-                      ^
-../src/helloworld.c:79:22: warning: 'BTNS_SLDR_GIER' defined but not used [-Wunused-variable]
- static volatile u32 *BTNS_SLDR_GIER  = (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x0000011C);
                       ^
 ../src/helloworld.c:80:22: warning: 'BTNS_SLDR_IPISR' defined but not used [-Wunused-variable]
  static volatile u32 *BTNS_SLDR_IPISR = (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000120);
                       ^
-../src/helloworld.c:81:22: warning: 'BTNS_SLDR_IPIER' defined but not used [-Wunused-variable]
- static volatile u32 *BTNS_SLDR_IPIER = (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000128);
-                      ^
 ../src/helloworld.c:88:22: warning: 'LEDS_SPY_IPISR' defined but not used [-Wunused-variable]
  static volatile u32 *LEDS_SPY_IPISR  = (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000120);
-                      ^
-../src/helloworld.c:89:22: warning: 'LEDS_SPY_IPIER' defined but not used [-Wunused-variable]
- static volatile u32 *LEDS_SPY_IPIER  = (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000128);
                       ^
 'Finished building: ../src/helloworld.c'
 ' '
@@ -57,9 +42,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size motorcontrol.elf  |tee "motorcontrol.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  25312	   1268	  22568	  49148	   bffc	motorcontrol.elf
+  25376	   1268	  22568	  49212	   c03c	motorcontrol.elf
 'Finished building: motorcontrol.elf.size'
 ' '
 
-16:17:11 Build Finished (took 644ms)
+16:32:16 Build Finished (took 695ms)
 
