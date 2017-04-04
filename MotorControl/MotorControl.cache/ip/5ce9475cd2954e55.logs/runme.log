@@ -1,0 +1,319 @@
+
+*** Running vivado
+    with args -log motorctrl_PI_CTRL_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source motorctrl_PI_CTRL_0_0.tcl
+
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source motorctrl_PI_CTRL_0_0.tcl -notrace
+Command: synth_design -top motorctrl_PI_CTRL_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 10192 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 292.461 ; gain = 82.441
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'motorctrl_PI_CTRL_0_0' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PI_CTRL_0_0/synth/motorctrl_PI_CTRL_0_0.vhd:82]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'PI_CTRL_v1_0' declared at 'd:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0.vhd:5' bound to instance 'U0' of component 'PI_CTRL_v1_0' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PI_CTRL_0_0/synth/motorctrl_PI_CTRL_0_0.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'PI_CTRL_v1_0' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0.vhd:49]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'PI_CTRL_v1_0_S00_AXI' declared at 'd:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0_S00_AXI.vhd:5' bound to instance 'PI_CTRL_v1_0_S00_AXI_inst' of component 'PI_CTRL_v1_0_S00_AXI' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'PI_CTRL_v1_0_S00_AXI' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0_S00_AXI.vhd:86]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-226] default block is never used [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0_S00_AXI.vhd:722]
+INFO: [Synth 8-226] default block is never used [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0_S00_AXI.vhd:3120]
+INFO: [Synth 8-256] done synthesizing module 'PI_CTRL_v1_0_S00_AXI' (1#1) [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0_S00_AXI.vhd:86]
+INFO: [Synth 8-256] done synthesizing module 'PI_CTRL_v1_0' (2#1) [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'motorctrl_PI_CTRL_0_0' (3#1) [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PI_CTRL_0_0/synth/motorctrl_PI_CTRL_0_0.vhd:82]
+WARNING: [Synth 8-3331] design PI_CTRL_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design PI_CTRL_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design PI_CTRL_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design PI_CTRL_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design PI_CTRL_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design PI_CTRL_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 836.352 ; gain = 626.332
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 836.352 ; gain = 626.332
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.353 . Memory (MB): peak = 1298.547 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:23 ; elapsed = 00:01:40 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |PI_CTRL_v1_0_S00_AXI__GB0 |           1|     26139|
+|2     |PI_CTRL_v1_0_S00_AXI__GB1 |           1|     10586|
+|3     |PI_CTRL_v1_0_S00_AXI__GB2 |           1|      9472|
+|4     |PI_CTRL_v1_0_S00_AXI__GB3 |           1|     12139|
+|5     |PI_CTRL_v1_0_S00_AXI__GB4 |           1|     15104|
+|6     |PI_CTRL_v1_0_S00_AXI__GB5 |           1|     18774|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 257   
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 256   
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module PI_CTRL_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 257   
+	               10 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 256   
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design motorctrl_PI_CTRL_0_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design motorctrl_PI_CTRL_0_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design motorctrl_PI_CTRL_0_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design motorctrl_PI_CTRL_0_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design motorctrl_PI_CTRL_0_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design motorctrl_PI_CTRL_0_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'axi_rresp_reg[0]' (FDRE) to 'axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'axi_bresp_reg[0]' (FDRE) to 'axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:41 ; elapsed = 00:02:16 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |PI_CTRL_v1_0_S00_AXI__GB0 |           1|     13845|
+|2     |PI_CTRL_v1_0_S00_AXI__GB1 |           1|      5078|
+|3     |PI_CTRL_v1_0_S00_AXI__GB2 |           1|       182|
+|4     |PI_CTRL_v1_0_S00_AXI__GB3 |           1|       242|
+|5     |PI_CTRL_v1_0_S00_AXI__GB4 |           1|       287|
+|6     |PI_CTRL_v1_0_S00_AXI__GB5 |           1|      2202|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:51 ; elapsed = 00:02:26 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:52 ; elapsed = 00:02:27 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |PI_CTRL_v1_0_S00_AXI__GB0 |           1|     13845|
+|2     |PI_CTRL_v1_0_S00_AXI__GB1 |           1|      5078|
+|3     |PI_CTRL_v1_0_S00_AXI__GB2 |           1|       182|
+|4     |PI_CTRL_v1_0_S00_AXI__GB3 |           1|       242|
+|5     |PI_CTRL_v1_0_S00_AXI__GB4 |           1|       287|
+|6     |PI_CTRL_v1_0_S00_AXI__GB5 |           1|      2202|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:54 ; elapsed = 00:02:39 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |PI_CTRL_v1_0_S00_AXI__GB0 |           1|      7502|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:56 ; elapsed = 00:02:41 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:56 ; elapsed = 00:02:42 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:57 ; elapsed = 00:02:42 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:57 ; elapsed = 00:02:42 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:57 ; elapsed = 00:02:42 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:57 ; elapsed = 00:02:42 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |     1|
+|2     |LUT2  |     2|
+|3     |LUT3  |    22|
+|4     |LUT4  |    34|
+|5     |LUT5  |   512|
+|6     |LUT6  |  2706|
+|7     |MUXF7 |  1088|
+|8     |MUXF8 |   544|
+|9     |FDRE  |  8257|
+|10    |FDSE  |    80|
++------+------+------+
+
+Report Instance Areas: 
++------+------------------------------+---------------------+------+
+|      |Instance                      |Module               |Cells |
++------+------------------------------+---------------------+------+
+|1     |top                           |                     | 13246|
+|2     |  U0                          |PI_CTRL_v1_0         | 13246|
+|3     |    PI_CTRL_v1_0_S00_AXI_inst |PI_CTRL_v1_0_S00_AXI | 13246|
++------+------------------------------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:57 ; elapsed = 00:02:42 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:47 . Memory (MB): peak = 1298.547 ; gain = 619.410
+Synthesis Optimization Complete : Time (s): cpu = 00:01:57 ; elapsed = 00:02:43 . Memory (MB): peak = 1298.547 ; gain = 1088.527
+INFO: [Project 1-571] Translating synthesized netlist
+WARNING: [Netlist 29-101] Netlist 'motorctrl_PI_CTRL_0_0' is not ideal for floorplanning, since the cellview 'PI_CTRL_v1_0_S00_AXI' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:57 ; elapsed = 00:02:40 . Memory (MB): peak = 1298.547 ; gain = 1081.605
+INFO: [Common 17-1381] The checkpoint 'D:/GITES/MotorControl/MotorControl.runs/motorctrl_PI_CTRL_0_0_synth_1/motorctrl_PI_CTRL_0_0.dcp' has been generated.

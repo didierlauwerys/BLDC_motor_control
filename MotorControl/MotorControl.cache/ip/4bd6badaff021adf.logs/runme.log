@@ -1,0 +1,322 @@
+
+*** Running vivado
+    with args -log motorctrl_PWM_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source motorctrl_PWM_0_0.tcl
+
+
+****** Vivado v2016.4 (64-bit)
+  **** SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+  **** IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source motorctrl_PWM_0_0.tcl -notrace
+Command: synth_design -top motorctrl_PWM_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 15320 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 292.254 ; gain = 82.594
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'motorctrl_PWM_0_0' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PWM_0_0/synth/motorctrl_PWM_0_0.vhd:83]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'PWM_v1_0' declared at 'd:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0.vhd:5' bound to instance 'U0' of component 'PWM_v1_0' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PWM_0_0/synth/motorctrl_PWM_0_0.vhd:145]
+INFO: [Synth 8-638] synthesizing module 'PWM_v1_0' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0.vhd:49]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'PWM_v1_0_S00_AXI' declared at 'd:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:7' bound to instance 'PWM_v1_0_S00_AXI_inst' of component 'PWM_v1_0_S00_AXI' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0.vhd:86]
+INFO: [Synth 8-638] synthesizing module 'PWM_v1_0_S00_AXI' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:88]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-226] default block is never used [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:230]
+INFO: [Synth 8-226] default block is never used [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:396]
+WARNING: [Synth 8-614] signal 'slv_reg3' is read in the process but is not in the sensitivity list [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:441]
+INFO: [Synth 8-256] done synthesizing module 'PWM_v1_0_S00_AXI' (1#1) [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'PWM_v1_0' (2#1) [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0.vhd:49]
+INFO: [Synth 8-256] done synthesizing module 'motorctrl_PWM_0_0' (3#1) [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PWM_0_0/synth/motorctrl_PWM_0_0.vhd:83]
+WARNING: [Synth 8-3331] design PWM_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design PWM_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design PWM_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design PWM_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design PWM_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design PWM_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 329.688 ; gain = 120.027
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 329.688 ; gain = 120.027
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 620.559 ; gain = 0.219
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'slv_reg4_reg' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:470]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 11    
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   8 Input     32 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module PWM_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 11    
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   8 Input     32 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design motorctrl_PWM_0_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design motorctrl_PWM_0_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design motorctrl_PWM_0_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design motorctrl_PWM_0_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design motorctrl_PWM_0_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design motorctrl_PWM_0_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'U0/PWM_v1_0_S00_AXI_inst/adc_time_reg[31]' (FDRE) to 'U0/PWM_v1_0_S00_AXI_inst/duty_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/PWM_v1_0_S00_AXI_inst/freq_reg[31]' (FDRE) to 'U0/PWM_v1_0_S00_AXI_inst/duty_reg[31]'
+INFO: [Synth 8-3886] merging instance 'U0/PWM_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'U0/PWM_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/PWM_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0/PWM_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'U0/PWM_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/PWM_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/PWM_v1_0_S00_AXI_inst/duty_reg[31] )
+INFO: [Synth 8-3332] Sequential element (U0/PWM_v1_0_S00_AXI_inst/axi_awaddr_reg[1]) is unused and will be removed from module motorctrl_PWM_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/PWM_v1_0_S00_AXI_inst/axi_awaddr_reg[0]) is unused and will be removed from module motorctrl_PWM_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/PWM_v1_0_S00_AXI_inst/axi_bresp_reg[1]) is unused and will be removed from module motorctrl_PWM_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/PWM_v1_0_S00_AXI_inst/axi_araddr_reg[1]) is unused and will be removed from module motorctrl_PWM_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/PWM_v1_0_S00_AXI_inst/axi_araddr_reg[0]) is unused and will be removed from module motorctrl_PWM_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/PWM_v1_0_S00_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module motorctrl_PWM_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/PWM_v1_0_S00_AXI_inst/duty_reg[31]) is unused and will be removed from module motorctrl_PWM_0_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net U0/PWM_v1_0_S00_AXI_inst/slv_reg4[0] with 1st driver pin 'U0/PWM_v1_0_S00_AXI_inst/slv_reg4_reg[0]__0/Q' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:223]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net U0/PWM_v1_0_S00_AXI_inst/slv_reg4[0] with 2nd driver pin 'U0/PWM_v1_0_S00_AXI_inst/slv_reg4_reg[0]/Q' [d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ipshared/ee9c/hdl/PWM_v1_0_S00_AXI.vhd:470]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        1|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    28|
+|2     |LUT1   |    33|
+|3     |LUT2   |    33|
+|4     |LUT3   |    15|
+|5     |LUT4   |    66|
+|6     |LUT5   |    27|
+|7     |LUT6   |    76|
+|8     |MUXF7  |    32|
+|9     |FDRE   |   421|
+|10    |FDSE   |     3|
+|11    |LDC    |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------+-----------------+------+
+|      |Instance                  |Module           |Cells |
++------+--------------------------+-----------------+------+
+|1     |top                       |                 |   735|
+|2     |  U0                      |PWM_v1_0         |   735|
+|3     |    PWM_v1_0_S00_AXI_inst |PWM_v1_0_S00_AXI |   735|
++------+--------------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 620.559 ; gain = 410.898
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 2 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 620.559 ; gain = 113.969
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 620.559 ; gain = 410.898
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  LDC => LDCE: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+35 Infos, 14 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 620.559 ; gain = 404.840
+INFO: [Common 17-1381] The checkpoint 'D:/GITES/MotorControl/MotorControl.runs/motorctrl_PWM_0_0_synth_1/motorctrl_PWM_0_0.dcp' has been generated.

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Tue Apr 04 15:07:09 2017
+# Process ID: 12992
+# Current directory: D:/GITES/MotorControl/MotorControl.runs/motorctrl_PWM_0_0_synth_1
+# Command line: vivado.exe -log motorctrl_PWM_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source motorctrl_PWM_0_0.tcl
+# Log file: D:/GITES/MotorControl/MotorControl.runs/motorctrl_PWM_0_0_synth_1/motorctrl_PWM_0_0.vds
+# Journal file: D:/GITES/MotorControl/MotorControl.runs/motorctrl_PWM_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source motorctrl_PWM_0_0.tcl -notrace

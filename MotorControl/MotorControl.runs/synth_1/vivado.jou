@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Tue Apr 04 15:33:55 2017
+# Process ID: 15584
+# Current directory: D:/GITES/MotorControl/MotorControl.runs/synth_1
+# Command line: vivado.exe -log motorctrl_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source motorctrl_wrapper.tcl
+# Log file: D:/GITES/MotorControl/MotorControl.runs/synth_1/motorctrl_wrapper.vds
+# Journal file: D:/GITES/MotorControl/MotorControl.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source motorctrl_wrapper.tcl -notrace
