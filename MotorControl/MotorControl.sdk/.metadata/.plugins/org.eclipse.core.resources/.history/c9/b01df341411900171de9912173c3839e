@@ -114,13 +114,7 @@ int init_adc()
 }
 int init_gpio()
 {
-	xil_printf("initializing LEDS\n");
-	*LEDS_SPY_GIER		=	0x00000000;
-	*LEDS_TRI			=	0x00000000;
-	*SPY_TRI			=	0x00000000;
-	*LEDS_DATA			=	0x00000000;
-	*SPY_DATA			=	0x00000000;
-	xil_printf("LEDS initialized\n");
+	LEDS_DATA
 	return 0;
 }
 int start_stepper_mode()

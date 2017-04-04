@@ -49,12 +49,53 @@
 #include "platform.h"
 #include "xil_printf.h"
 
+#define XADC_BASE_ADDR 0x43C00000
+
+//declaration of registers
+static volatile u32 *XADC_SRR			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000000);
+static volatile u32 *XADC_SR			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000004);
+static volatile u32 *XADC_AOSR			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000008);
+static volatile u32 *XADC_CONVSTR		= (u32*) (((u32)XADC_BASE_ADDR)+0x0000000C);
+static volatile u32 *XADC_SYSMONRR		= (u32*) (((u32)XADC_BASE_ADDR)+0x00000010);
+static volatile u32 *XADC_GIER			= (u32*) (((u32)XADC_BASE_ADDR)+0x0000005C);
+static volatile u32 *XADC_IPISR			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000060);
+static volatile u32 *XADC_IPIER			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000068);
+static volatile u32 *XADC_VAUX_06		= (u32*) (((u32)XADC_BASE_ADDR)+0x00000258);
+static volatile u32 *XADC_VAUX_07		= (u32*) (((u32)XADC_BASE_ADDR)+0x0000025C);
+static volatile u32 *XADC_VAUX_14		= (u32*) (((u32)XADC_BASE_ADDR)+0x00000278);
+static volatile u32 *XADC_VAUX_15		= (u32*) (((u32)XADC_BASE_ADDR)+0x0000027C);
+static volatile u32 *XADC_CR0			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000300);
+static volatile u32 *XADC_CR1			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000304);
+static volatile u32 *XADC_CR2			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000308);
+
+int init_motor()
+{
+	return 0;
+}
+int init_adc()
+{
+
+	return 0;
+}
+int init_gpio()
+{
+	return 0;
+}
+int start_stepper_mode()
+{
+	return 0;
+}
+
 
 int main()
 {
     init_platform();
 
     print("Hello World\n\r");
+
+    init_adc();
+    init_gpio();
+    start_stepper_mode();
 
     cleanup_platform();
     return 0;

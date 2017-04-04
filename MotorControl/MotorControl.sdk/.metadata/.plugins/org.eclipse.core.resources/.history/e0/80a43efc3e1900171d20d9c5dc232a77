@@ -51,11 +51,8 @@
 #include "unistd.h"
 
 #define XADC_BASE_ADDR 0x43C00000
-#define BTNS_SLDR_BASE_ADDR 0x41200000
-#define LEDS_SPY_BASE_ADDR 0x41210000
 
 //declaration of registers
-//XADC
 static volatile u32 *XADC_SRR			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000000);
 static volatile u32 *XADC_SR			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000004);
 static volatile u32 *XADC_AOSR			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000008);
@@ -71,22 +68,6 @@ static volatile u32 *XADC_VAUX_15		= (u32*) (((u32)XADC_BASE_ADDR)+0x0000027C);
 static volatile u32 *XADC_CR0			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000300);
 static volatile u32 *XADC_CR1			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000304);
 static volatile u32 *XADC_CR2			= (u32*) (((u32)XADC_BASE_ADDR)+0x00000308);
-//Buttons & Spy
-static volatile u32 *BTNS_DATA			= (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000000);
-static volatile u32 *BTNS_TRI			= (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000004);
-static volatile u32 *SLDR_DATA			= (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000008);
-static volatile u32 *SLDR_TRI			= (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x0000000C);
-static volatile u32 *BTNS_SLDR_GIER		= (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x0000011C);
-static volatile u32 *BTNS_SLDR_IPISR	= (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000120);
-static volatile u32 *BTNS_SLDR_IPIER	= (u32*) (((u32)BTNS_SLDR_BASE_ADDR)+0x00000128);
-//LEDS & Data
-static volatile u32 *LEDS_DATA			= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000000);
-static volatile u32 *LEDS_TRI			= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000004);
-static volatile u32 *SPY_DATA			= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000008);
-static volatile u32 *SPY_TRI			= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x0000000C);
-static volatile u32 *LEDS_SPY_GIER		= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x0000011C);
-static volatile u32 *LEDS_SPY_IPISR		= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000120);
-static volatile u32 *LEDS_SPY_IPIER		= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000128);
 
 int init_motor()
 {
@@ -104,23 +85,16 @@ int init_adc()
 	*XADC_IPIER		=	0x00000020;
 	if((*XADC_IPISR&0x00000020)==0x00000020)
 		*XADC_IPISR=*XADC_IPISR | 0x00000020;
-	*XADC_CR0		=	0x0000831F; //default mode
+	*XADC_CR0		=	0x0000831F;
 	*XADC_CR1		=	0x00000F2F;
 	*XADC_CR2		=	0x00000400;
 	usleep(500);
-	*XADC_CR1		=	0x00003F2F; //single-channel mode
+	*XADC_CR1	=	0x00003F2F;
 	xil_printf("adc initialized\n");
 	return 0;
 }
 int init_gpio()
 {
-	xil_printf("initializing LEDS\n");
-	*LEDS_SPY_GIER		=	0x00000000;
-	*LEDS_TRI			=	0x00000000;
-	*SPY_TRI			=	0x00000000;
-	*LEDS_DATA			=	0x00000000;
-	*SPY_DATA			=	0x00000000;
-	xil_printf("LEDS initialized\n");
 	return 0;
 }
 int start_stepper_mode()
