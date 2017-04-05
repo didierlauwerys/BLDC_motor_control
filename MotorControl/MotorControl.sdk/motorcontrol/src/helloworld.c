@@ -49,10 +49,14 @@
 #include "platform.h"
 #include "xil_printf.h"
 #include "unistd.h"
+#include "PWM.h"
+#include "PI_CTRL.h"
+#include "StateController.h"
 
 #define XADC_BASE_ADDR 0x43C00000
 #define BTNS_SLDR_BASE_ADDR 0x41200000
 #define LEDS_SPY_BASE_ADDR 0x41210000
+#define PWM_BASE_ADDR 0x43C10000
 
 //declaration of registers
 //XADC
@@ -128,6 +132,10 @@ int init_gpio()
 	*BTNS_SLDR_IPIER	=	0x00000003;
 	xil_printf("GPIO initialized\n");
 	return 0;
+}
+int init_PWM()
+{
+
 }
 int start_stepper_mode()
 {
