@@ -48,15 +48,21 @@
 #include <stdio.h>
 #include "platform.h"
 #include "xil_printf.h"
+#include "xil_types.h"
+#include "xil_io.h"
+#include "xil_exception.h"
 #include "unistd.h"
 #include "PWM.h"
 #include "PI_CTRL.h"
 #include "StateController.h"
+#include <stdbool.h>
+#include "xscugic.h"
 
 #define XADC_BASE_ADDR 0x43C00000
 #define BTNS_SLDR_BASE_ADDR 0x41200000
 #define LEDS_SPY_BASE_ADDR 0x41210000
 #define PWM_BASE_ADDR 0x43C10000
+#define STATE_CONTR_BASE_ADDR 0x43C20000
 
 //declaration of registers
 //XADC
@@ -91,11 +97,53 @@ static volatile u32 *SPY_TRI			= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x0000000C);
 static volatile u32 *LEDS_SPY_GIER		= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x0000011C);
 static volatile u32 *LEDS_SPY_IPISR		= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000120);
 static volatile u32 *LEDS_SPY_IPIER		= (u32*) (((u32)LEDS_SPY_BASE_ADDR)+0x00000128);
+//Motor settings
+static volatile u32 frequency;
+static volatile u32 dutyCycle;
+static volatile u32 freq_bldc;
+//Interrupts
+static volatile bool changeFlag;
+static volatile u32 dummy;
+static volatile u32 *GPIO_GIER 			= (u32 *) 0x4120011C ;      // GPIO Global Interrupt Enable
+static volatile u32 *GPIO_IER 			= (u32 *) 0x41200128 ;      // GPIO Interrupt Enable
+static volatile u32 *GPIO_ISR 			= (u32 *) 0x41200120 ;      // GPIO Interrupt Status
+XScuGic InterruptController ;  // Instance of interrupt controller
+static XScuGic_Config *GicConfig; // Config parameter of controller
 
-int init_motor()
+void start_stepper_mode()
 {
-	return 0;
+	while (((int) freq_bldc) > 350000)
+	{
+		freq_bldc -= 15000;
+		if (((int) dutyCycle) < 3800)
+			dutyCycle += 5;
+		PWM_mWriteReg(PWM_BASE_ADDR, PWM_S00_AXI_SLV_REG1_OFFSET, dutyCycle);
+		STATECONTROLLER_mWriteReg(STATE_CONTR_BASE_ADDR, STATECONTROLLER_S00_AXI_SLV_REG0_OFFSET, freq_bldc);
+		usleep(100000); // delay om niet onmiddellijk te versnellen
+	}
+	xil_printf("Full stepper mode speed reached\n");
+	int sw = ((int)freq_bldc*240);
+	int value = sw/10000;
+	int rps = 100000/((int)value);
+	int rpm = 60*rps;
+	xil_printf("RPM = %d\n",rpm);
+	int d = 100*((int)frequency - (int)dutyCycle)/(int)frequency;
+	xil_printf("Duty cycle = %d%%\n\r",d);
 }
+void my_GPIO_ISR (void)    //   interrupt routine -> set flag
+{
+	*GPIO_GIER = 0x00000000;
+	// changeFlag = true;
+	if (*GPIO_ISR == 0x00000001)
+		*GPIO_ISR = *GPIO_ISR & 0x00000001;
+	else if (*GPIO_ISR == 0x00000002)
+		*GPIO_ISR = *GPIO_ISR & 0x00000002;
+	else if (*GPIO_ISR == 0x00000003)
+		*GPIO_ISR = *GPIO_ISR & 0x00000003;
+
+	*GPIO_GIER = 0x80000000;
+}
+
 int init_adc()
 {
 	xil_printf("initializing adc...\n");
@@ -135,20 +183,56 @@ int init_gpio()
 }
 int init_PWM()
 {
-
+	return 0;
 }
-int start_stepper_mode()
+int init_interrups()
 {
+	changeFlag = false;
+    *GPIO_IER    = 0x00000001  ;
+
+
+    if (*GPIO_ISR == 0x00000001)
+    		*GPIO_ISR = 0x00000001;
+    *GPIO_GIER = 0x80000000  ;  //  GIE
+
+    xil_printf ("Interrupts Initialised \n\r" ) ;
+    return 0;
+}
+
+int ScuGicInterrupt_Init()
+{
+	u32 Status;
+	Xil_ExceptionInit();
+
+	GicConfig = XScuGic_LookupConfig(XPAR_PS7_SCUGIC_0_DEVICE_ID) ;
+
+	Status = XScuGic_CfgInitialize(&InterruptController,GicConfig,GicConfig->CpuBaseAddress);
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_IRQ_INT,(Xil_ExceptionHandler) XScuGic_InterruptHandler,(void *) &InterruptController);
+
+
+	// GPIO	  Connected to IRQ_F2P(0) : lowest priority and ID = 61     IRQ_F2P(D15..D0)   connected to D0 ...)
+	Status = XScuGic_Connect(&InterruptController,61,(Xil_ExceptionHandler) init_interrups, (void *) &InterruptController) ;
+	XScuGic_Enable(&InterruptController,61) ;
+	XScuGic_SetPriorityTriggerType(&InterruptController,61,0xA0,0x3) ;      //0x03 = Rising Edge
+
+	Xil_ExceptionEnable();
+	return 0 ;
+}
+int init_motor()
+{
+	frequency = 0x00001000;
+	dutyCycle = 0x00000A61;
+	freq_bldc = 0x001FA010;
 	return 0;
 }
 
-
 int main()
 {
+	xil_printf("Loading done\n\r");
     init_platform();
 
     print("Hello World\n\r");
-
+    init_motor();
     init_adc();
     init_gpio();
     start_stepper_mode();
