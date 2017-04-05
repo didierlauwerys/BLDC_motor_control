@@ -1,6 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use ieee.std_logic_arith.all ;
+use IEEE.std_logic_unsigned.all;
 
 entity StateController_v1_0_S00_AXI is
 	generic (
@@ -125,6 +127,9 @@ architecture arch_imp of StateController_v1_0_S00_AXI is
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
 
+    signal CLK : STD_LOGIC;
+    signal RESET : STD_LOGIC;
+    signal sw : integer range 0 to 6;
 begin
 	-- I/O Connections assignments
 
@@ -220,10 +225,10 @@ begin
 	      slv_reg1 <= (others => '0');
 	      slv_reg2 <= (others => '0');
 	      slv_reg3 <= (others => '0');
-	      slv_reg4 <= (others => '0');
-	      slv_reg5 <= (others => '0');
-	      slv_reg6 <= (others => '0');
-	      slv_reg7 <= (others => '0');
+--	      slv_reg4 <= (others => '0');
+--	      slv_reg5 <= (others => '0');
+--	      slv_reg6 <= (others => '0');
+--	      slv_reg7 <= (others => '0');
 	    else
 	      loc_addr := axi_awaddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
 	      if (slv_reg_wren = '1') then
@@ -260,47 +265,47 @@ begin
 	                slv_reg3(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
-	          when b"100" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 4
-	                slv_reg4(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
-	          when b"101" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 5
-	                slv_reg5(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
-	          when b"110" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 6
-	                slv_reg6(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
-	          when b"111" =>
-	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
-	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
-	                -- Respective byte enables are asserted as per write strobes                   
-	                -- slave registor 7
-	                slv_reg7(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
-	              end if;
-	            end loop;
+--	          when b"100" =>
+--	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+--	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+--	                -- Respective byte enables are asserted as per write strobes                   
+--	                -- slave registor 4
+--	                slv_reg4(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+--	              end if;
+--	            end loop;
+--	          when b"101" =>
+--	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+--	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+--	                -- Respective byte enables are asserted as per write strobes                   
+--	                -- slave registor 5
+--	                slv_reg5(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+--	              end if;
+--	            end loop;
+--	          when b"110" =>
+--	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+--	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+--	                -- Respective byte enables are asserted as per write strobes                   
+--	                -- slave registor 6
+--	                slv_reg6(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+--	              end if;
+--	            end loop;
+--	          when b"111" =>
+--	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+--	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+--	                -- Respective byte enables are asserted as per write strobes                   
+--	                -- slave registor 7
+--	                slv_reg7(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+--	              end if;
+--	            end loop;
 	          when others =>
 	            slv_reg0 <= slv_reg0;
 	            slv_reg1 <= slv_reg1;
 	            slv_reg2 <= slv_reg2;
 	            slv_reg3 <= slv_reg3;
-	            slv_reg4 <= slv_reg4;
-	            slv_reg5 <= slv_reg5;
-	            slv_reg6 <= slv_reg6;
-	            slv_reg7 <= slv_reg7;
+--	            slv_reg4 <= slv_reg4;
+--	            slv_reg5 <= slv_reg5;
+--	            slv_reg6 <= slv_reg6;
+--	            slv_reg7 <= slv_reg7;
 	        end case;
 	      end if;
 	    end if;
@@ -435,7 +440,62 @@ begin
 
 
 	-- Add user logic here
-
+	-- slv_reg0 -> switching period (to HW)
+	-- slv_reg4 -> switching state (to SW)
+process(CLK)
+    variable count : integer;
+    variable limit : integer;
+    begin
+    CLK <= S_AXI_ACLK;
+    RESET <= not S_AXI_ARESETN;
+    if (CLK'event and CLK = '1') then
+        slv_reg4 <= conv_std_logic_vector(sw,32);
+        if RESET = '1' then
+            sw <= 0;
+            count := 0;
+            limit := conv_integer(slv_reg0);
+            TRIGGER <= '1';
+        else
+            if count >= limit then
+               count := 0;
+               sw <= sw + 1;
+               limit := conv_integer(slv_reg0);
+            else
+               count := count + 1;
+            end if; 
+        end if;
+        if sw >= 3 then
+            TRIGGER <= '1';
+        end if;
+        if sw >= 6 then
+            TRIGGER <= '0';
+            sw <= 0;
+        end if;
+    end if;
+    case sw is
+        when 0 =>   PIN_A <= (others => PWM);
+                    PIN_B <= "00";
+                    PIN_C <= "10";
+        when 1 =>   PIN_A <= "10";
+                    PIN_B <= "00";
+                    PIN_C <= (others => PWM);
+        when 2 =>   PIN_A <= "00";
+                    PIN_B <= "10";
+                    PIN_C <= (others => PWM);
+        when 3 =>   PIN_A <= "00";
+                    PIN_B <= (others => PWM);
+                    PIN_C <= "10";
+        when 4 =>   PIN_A <= "10";
+                    PIN_B <= (others => PWM);
+                    PIN_C <= "00";
+        when 5 =>   PIN_A <= (others => PWM);
+                    PIN_B <= "10";
+                    PIN_C <= "00";
+        when others =>  PIN_A <= "00";
+                        PIN_B <= "00";
+                        PIN_C <= "00";
+    end case;              
+end process;
 	-- User logic ends
 
 end arch_imp;

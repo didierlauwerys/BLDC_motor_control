@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Tue Apr 04 16:40:16 2017
+# Process ID: 18100
+# Current directory: C:/Embedded/GITES/MotorControl
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18424 C:\Embedded\GITES\MotorControl\MotorControl.xpr
+# Log file: C:/Embedded/GITES/MotorControl/vivado.log
+# Journal file: C:/Embedded/GITES/MotorControl\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Embedded/GITES/MotorControl/MotorControl.xpr
+launch_sdk -workspace C:/Embedded/GITES/MotorControl/MotorControl.sdk -hwspec C:/Embedded/GITES/MotorControl/MotorControl.sdk/motorctrl_wrapper.hdf
+launch_sdk -workspace C:/Embedded/GITES/MotorControl/MotorControl.sdk -hwspec C:/Embedded/GITES/MotorControl/MotorControl.sdk/motorctrl_wrapper.hdf
+launch_sdk -workspace C:/Embedded/GITES/MotorControl/MotorControl.sdk -hwspec C:/Embedded/GITES/MotorControl/MotorControl.sdk/motorctrl_wrapper.hdf
+launch_sdk -workspace C:/Embedded/GITES/MotorControl/MotorControl.sdk -hwspec C:/Embedded/GITES/MotorControl/MotorControl.sdk/motorctrl_wrapper.hdf

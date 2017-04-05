@@ -81,8 +81,8 @@
   "../../../bd/motorctrl/ipshared/8664/hdl/PWM_v1_0_S00_AXI.vhd" \
   "../../../bd/motorctrl/ipshared/8664/hdl/PWM_v1_0.vhd" \
   "../../../bd/motorctrl/ip/motorctrl_PWM_0_0/sim/motorctrl_PWM_0_0.vhd" \
-  "../../../bd/motorctrl/ipshared/1fa2/hdl/StateController_v1_0_S00_AXI.vhd" \
-  "../../../bd/motorctrl/ipshared/1fa2/hdl/StateController_v1_0.vhd" \
+  "../../../bd/motorctrl/ipshared/3a92/hdl/StateController_v1_0_S00_AXI.vhd" \
+  "../../../bd/motorctrl/ipshared/3a92/hdl/StateController_v1_0.vhd" \
   "../../../bd/motorctrl/ip/motorctrl_StateController_0_0/sim/motorctrl_StateController_0_0.vhd" \
   "../../../bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0_S00_AXI.vhd" \
   "../../../bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0.vhd" \
