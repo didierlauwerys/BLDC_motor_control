@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
---Date        : Wed Apr 05 10:06:11 2017
---Host        : PC-Lenovo running 64-bit major release  (build 9200)
+--Date        : Wed Apr 05 11:23:58 2017
+--Host        : DL-PC running 64-bit major release  (build 9200)
 --Command     : generate_target motorctrl.bd
 --Design      : motorctrl
 --Purpose     : IP block netlist
@@ -2134,7 +2134,7 @@ entity motorctrl is
     sws_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of motorctrl : entity is "motorctrl,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=motorctrl,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=19,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=5,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of motorctrl : entity is "motorctrl,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=motorctrl,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=20,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=6,da_board_cnt=5,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of motorctrl : entity is "motorctrl.hwdef";
 end motorctrl;
@@ -2188,7 +2188,7 @@ architecture STRUCTURE of motorctrl is
     M_AXI_GP0_BRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M_AXI_GP0_RRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
     M_AXI_GP0_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    IRQ_F2P : in STD_LOGIC_VECTOR ( 0 to 0 );
+    IRQ_F2P : in STD_LOGIC_VECTOR ( 3 downto 0 );
     FCLK_CLK0 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
     MIO : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -2326,34 +2326,19 @@ architecture STRUCTURE of motorctrl is
     gpio2_io_o : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component motorctrl_axi_gpio_1_1;
-  component motorctrl_PI_CTRL_0_0 is
+  component motorctrl_xlconcat_0_0 is
   port (
-    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_awvalid : in STD_LOGIC;
-    s00_axi_awready : out STD_LOGIC;
-    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s00_axi_wvalid : in STD_LOGIC;
-    s00_axi_wready : out STD_LOGIC;
-    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_bvalid : out STD_LOGIC;
-    s00_axi_bready : in STD_LOGIC;
-    s00_axi_araddr : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    s00_axi_arvalid : in STD_LOGIC;
-    s00_axi_arready : out STD_LOGIC;
-    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s00_axi_rvalid : out STD_LOGIC;
-    s00_axi_rready : in STD_LOGIC;
-    s00_axi_aclk : in STD_LOGIC;
-    s00_axi_aresetn : in STD_LOGIC
+    In0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    In3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    dout : out STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  end component motorctrl_PI_CTRL_0_0;
+  end component motorctrl_xlconcat_0_0;
   component motorctrl_PWM_0_0 is
   port (
     PWM : out STD_LOGIC;
+    intrpt : out STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_awvalid : in STD_LOGIC;
@@ -2384,6 +2369,7 @@ architecture STRUCTURE of motorctrl is
     PIN_B : out STD_LOGIC_VECTOR ( 1 downto 0 );
     PIN_C : out STD_LOGIC_VECTOR ( 1 downto 0 );
     TRIGGER : out STD_LOGIC;
+    intrpt : out STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_awvalid : in STD_LOGIC;
@@ -2407,11 +2393,39 @@ architecture STRUCTURE of motorctrl is
     s00_axi_aresetn : in STD_LOGIC
   );
   end component motorctrl_StateController_0_0;
+  component motorctrl_PI_CTRL_0_0 is
+  port (
+    intrpt : out STD_LOGIC;
+    s00_axi_awaddr : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_awvalid : in STD_LOGIC;
+    s00_axi_awready : out STD_LOGIC;
+    s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    s00_axi_wvalid : in STD_LOGIC;
+    s00_axi_wready : out STD_LOGIC;
+    s00_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_bvalid : out STD_LOGIC;
+    s00_axi_bready : in STD_LOGIC;
+    s00_axi_araddr : in STD_LOGIC_VECTOR ( 9 downto 0 );
+    s00_axi_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_arready : out STD_LOGIC;
+    s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    s00_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s00_axi_rvalid : out STD_LOGIC;
+    s00_axi_rready : in STD_LOGIC;
+    s00_axi_aclk : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC
+  );
+  end component motorctrl_PI_CTRL_0_0;
   signal PWM_0_PWM : STD_LOGIC;
+  signal PWM_0_intrpt : STD_LOGIC;
   signal StateController_0_PIN_A : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal StateController_0_PIN_B : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal StateController_0_PIN_C : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal StateController_0_TRIGGER : STD_LOGIC;
+  signal StateController_0_intrpt : STD_LOGIC;
   signal Vaux14_1_V_N : STD_LOGIC;
   signal Vaux14_1_V_P : STD_LOGIC;
   signal Vaux15_1_V_N : STD_LOGIC;
@@ -2598,7 +2612,10 @@ architecture STRUCTURE of motorctrl is
   signal ps7_0_axi_periph_M05_AXI_WVALID : STD_LOGIC;
   signal rst_ps7_0_100M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xadc_wiz_0_ip2intc_irpt : STD_LOGIC;
+  signal xlconcat_0_dout : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_PI_CTRL_0_intrpt_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE0_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE1_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_TTC0_WAVE2_OUT_UNCONNECTED : STD_LOGIC;
@@ -2611,7 +2628,6 @@ architecture STRUCTURE of motorctrl is
   signal NLW_xadc_wiz_0_busy_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_eoc_out_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_eos_out_UNCONNECTED : STD_LOGIC;
-  signal NLW_xadc_wiz_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_xadc_wiz_0_channel_out_UNCONNECTED : STD_LOGIC_VECTOR ( 4 downto 0 );
 begin
   PIN_A(1 downto 0) <= StateController_0_PIN_A(1 downto 0);
@@ -2635,6 +2651,7 @@ begin
   leds_4bits_tri_t(3 downto 0) <= axi_gpio_1_GPIO_TRI_T(3 downto 0);
 PI_CTRL_0: component motorctrl_PI_CTRL_0_0
      port map (
+      intrpt => NLW_PI_CTRL_0_intrpt_UNCONNECTED,
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(9 downto 0) => ps7_0_axi_periph_M05_AXI_ARADDR(9 downto 0),
       s00_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -2660,6 +2677,7 @@ PI_CTRL_0: component motorctrl_PI_CTRL_0_0
 PWM_0: component motorctrl_PWM_0_0
      port map (
       PWM => PWM_0_PWM,
+      intrpt => PWM_0_intrpt,
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(4 downto 0) => ps7_0_axi_periph_M03_AXI_ARADDR(4 downto 0),
       s00_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -2689,6 +2707,7 @@ StateController_0: component motorctrl_StateController_0_0
       PIN_C(1 downto 0) => StateController_0_PIN_C(1 downto 0),
       PWM => PWM_0_PWM,
       TRIGGER => StateController_0_TRIGGER,
+      intrpt => StateController_0_intrpt,
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(4 downto 0) => ps7_0_axi_periph_M04_AXI_ARADDR(4 downto 0),
       s00_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -2783,7 +2802,7 @@ processing_system7_0: component motorctrl_processing_system7_0_0
       DDR_WEB => DDR_we_n,
       FCLK_CLK0 => processing_system7_0_FCLK_CLK0,
       FCLK_RESET0_N => processing_system7_0_FCLK_RESET0_N,
-      IRQ_F2P(0) => axi_gpio_0_ip2intc_irpt,
+      IRQ_F2P(3 downto 0) => xlconcat_0_dout(3 downto 0),
       MIO(53 downto 0) => FIXED_IO_mio(53 downto 0),
       M_AXI_GP0_ACLK => processing_system7_0_FCLK_CLK0,
       M_AXI_GP0_ARADDR(31 downto 0) => processing_system7_0_M_AXI_GP0_ARADDR(31 downto 0),
@@ -3021,7 +3040,7 @@ xadc_wiz_0: component motorctrl_xadc_wiz_0_0
       convst_in => '0',
       eoc_out => NLW_xadc_wiz_0_eoc_out_UNCONNECTED,
       eos_out => NLW_xadc_wiz_0_eos_out_UNCONNECTED,
-      ip2intc_irpt => NLW_xadc_wiz_0_ip2intc_irpt_UNCONNECTED,
+      ip2intc_irpt => xadc_wiz_0_ip2intc_irpt,
       s_axi_aclk => processing_system7_0_FCLK_CLK0,
       s_axi_araddr(10 downto 0) => ps7_0_axi_periph_M00_AXI_ARADDR(10 downto 0),
       s_axi_aresetn => rst_ps7_0_100M_peripheral_aresetn(0),
@@ -3051,6 +3070,14 @@ xadc_wiz_0: component motorctrl_xadc_wiz_0_0
       vauxp7 => Vaux7_1_V_P,
       vn_in => xlconstant_0_dout(0),
       vp_in => xlconstant_0_dout(0)
+    );
+xlconcat_0: component motorctrl_xlconcat_0_0
+     port map (
+      In0(0) => axi_gpio_0_ip2intc_irpt,
+      In1(0) => xadc_wiz_0_ip2intc_irpt,
+      In2(0) => PWM_0_intrpt,
+      In3(0) => StateController_0_intrpt,
+      dout(3 downto 0) => xlconcat_0_dout(3 downto 0)
     );
 xlconstant_0: component motorctrl_xlconstant_0_0
      port map (

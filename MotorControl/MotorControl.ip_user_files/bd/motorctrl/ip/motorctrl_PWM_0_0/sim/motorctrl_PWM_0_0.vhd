@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:PWM:1.0
--- IP Revision: 4
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -56,6 +56,7 @@ USE ieee.numeric_std.ALL;
 ENTITY motorctrl_PWM_0_0 IS
   PORT (
     PWM : OUT STD_LOGIC;
+    intrpt : OUT STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -90,6 +91,7 @@ ARCHITECTURE motorctrl_PWM_0_0_arch OF motorctrl_PWM_0_0 IS
     );
     PORT (
       PWM : OUT STD_LOGIC;
+      intrpt : OUT STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -143,6 +145,7 @@ BEGIN
     )
     PORT MAP (
       PWM => PWM,
+      intrpt => intrpt,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,

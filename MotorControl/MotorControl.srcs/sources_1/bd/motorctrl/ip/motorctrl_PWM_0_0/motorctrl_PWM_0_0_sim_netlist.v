@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-// Date        : Tue Apr 04 15:07:40 2017
+// Date        : Wed Apr 05 11:16:02 2017
 // Host        : DL-PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PWM_0_0/motorctrl_PWM_0_0_sim_netlist.v
+//               D:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PWM_0_0/motorctrl_PWM_0_0_sim_netlist.v
 // Design      : motorctrl_PWM_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,6 +16,7 @@
 (* NotValidForBitStream *)
 module motorctrl_PWM_0_0
    (PWM,
+    intrpt,
     s00_axi_awaddr,
     s00_axi_awprot,
     s00_axi_awvalid,
@@ -38,6 +39,7 @@ module motorctrl_PWM_0_0
     s00_axi_aclk,
     s00_axi_aresetn);
   output PWM;
+  output intrpt;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [4:0]s00_axi_awaddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
@@ -62,6 +64,7 @@ module motorctrl_PWM_0_0
 
   wire \<const0> ;
   wire PWM;
+  wire intrpt;
   wire s00_axi_aclk;
   wire [4:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -91,6 +94,7 @@ module motorctrl_PWM_0_0
         .S_AXI_ARREADY(s00_axi_arready),
         .S_AXI_AWREADY(s00_axi_awready),
         .S_AXI_WREADY(s00_axi_wready),
+        .intrpt(intrpt),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr[4:2]),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -113,6 +117,7 @@ module motorctrl_PWM_0_0_PWM_v1_0
     S_AXI_AWREADY,
     S_AXI_ARREADY,
     s00_axi_rvalid,
+    intrpt,
     s00_axi_rdata,
     PWM,
     s00_axi_bvalid,
@@ -131,6 +136,7 @@ module motorctrl_PWM_0_0_PWM_v1_0
   output S_AXI_AWREADY;
   output S_AXI_ARREADY;
   output s00_axi_rvalid;
+  output intrpt;
   output [31:0]s00_axi_rdata;
   output PWM;
   output s00_axi_bvalid;
@@ -150,6 +156,7 @@ module motorctrl_PWM_0_0_PWM_v1_0
   wire S_AXI_ARREADY;
   wire S_AXI_AWREADY;
   wire S_AXI_WREADY;
+  wire intrpt;
   wire s00_axi_aclk;
   wire [2:0]s00_axi_araddr;
   wire s00_axi_aresetn;
@@ -170,6 +177,7 @@ module motorctrl_PWM_0_0_PWM_v1_0
         .S_AXI_ARREADY(S_AXI_ARREADY),
         .S_AXI_AWREADY(S_AXI_AWREADY),
         .S_AXI_WREADY(S_AXI_WREADY),
+        .intrpt(intrpt),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr),
         .s00_axi_aresetn(s00_axi_aresetn),
@@ -192,6 +200,7 @@ module motorctrl_PWM_0_0_PWM_v1_0_S00_AXI
     S_AXI_AWREADY,
     S_AXI_ARREADY,
     s00_axi_rvalid,
+    intrpt,
     s00_axi_rdata,
     PWM,
     s00_axi_bvalid,
@@ -210,6 +219,7 @@ module motorctrl_PWM_0_0_PWM_v1_0_S00_AXI
   output S_AXI_AWREADY;
   output S_AXI_ARREADY;
   output s00_axi_rvalid;
+  output intrpt;
   output [31:0]s00_axi_rdata;
   output PWM;
   output s00_axi_bvalid;
@@ -502,6 +512,92 @@ module motorctrl_PWM_0_0_PWM_v1_0_S00_AXI
   wire [30:0]duty_reg;
   wire [30:0]freq;
   wire \freq[30]_i_1_n_0 ;
+  wire intrpt;
+  wire intrpt0_carry__0_i_10_n_0;
+  wire intrpt0_carry__0_i_11_n_0;
+  wire intrpt0_carry__0_i_12_n_0;
+  wire intrpt0_carry__0_i_13_n_0;
+  wire intrpt0_carry__0_i_14_n_0;
+  wire intrpt0_carry__0_i_15_n_0;
+  wire intrpt0_carry__0_i_16_n_0;
+  wire intrpt0_carry__0_i_17_n_0;
+  wire intrpt0_carry__0_i_18_n_0;
+  wire intrpt0_carry__0_i_19_n_0;
+  wire intrpt0_carry__0_i_1_n_0;
+  wire intrpt0_carry__0_i_2_n_0;
+  wire intrpt0_carry__0_i_3_n_0;
+  wire intrpt0_carry__0_i_4_n_0;
+  wire intrpt0_carry__0_i_5_n_0;
+  wire intrpt0_carry__0_i_5_n_1;
+  wire intrpt0_carry__0_i_5_n_2;
+  wire intrpt0_carry__0_i_5_n_3;
+  wire intrpt0_carry__0_i_6_n_0;
+  wire intrpt0_carry__0_i_6_n_1;
+  wire intrpt0_carry__0_i_6_n_2;
+  wire intrpt0_carry__0_i_6_n_3;
+  wire intrpt0_carry__0_i_7_n_0;
+  wire intrpt0_carry__0_i_7_n_1;
+  wire intrpt0_carry__0_i_7_n_2;
+  wire intrpt0_carry__0_i_7_n_3;
+  wire intrpt0_carry__0_i_8_n_0;
+  wire intrpt0_carry__0_i_9_n_0;
+  wire intrpt0_carry__0_n_0;
+  wire intrpt0_carry__0_n_1;
+  wire intrpt0_carry__0_n_2;
+  wire intrpt0_carry__0_n_3;
+  wire intrpt0_carry__1_i_10_n_0;
+  wire intrpt0_carry__1_i_11_n_0;
+  wire intrpt0_carry__1_i_12_n_0;
+  wire intrpt0_carry__1_i_1_n_0;
+  wire intrpt0_carry__1_i_2_n_0;
+  wire intrpt0_carry__1_i_3_n_0;
+  wire intrpt0_carry__1_i_4_n_0;
+  wire intrpt0_carry__1_i_4_n_2;
+  wire intrpt0_carry__1_i_4_n_3;
+  wire intrpt0_carry__1_i_5_n_0;
+  wire intrpt0_carry__1_i_5_n_1;
+  wire intrpt0_carry__1_i_5_n_2;
+  wire intrpt0_carry__1_i_5_n_3;
+  wire intrpt0_carry__1_i_6_n_0;
+  wire intrpt0_carry__1_i_7_n_0;
+  wire intrpt0_carry__1_i_8_n_0;
+  wire intrpt0_carry__1_i_9_n_0;
+  wire intrpt0_carry__1_n_1;
+  wire intrpt0_carry__1_n_2;
+  wire intrpt0_carry__1_n_3;
+  wire intrpt0_carry_i_10_n_0;
+  wire intrpt0_carry_i_11_n_0;
+  wire intrpt0_carry_i_12_n_0;
+  wire intrpt0_carry_i_13_n_0;
+  wire intrpt0_carry_i_14_n_0;
+  wire intrpt0_carry_i_15_n_0;
+  wire intrpt0_carry_i_16_n_0;
+  wire intrpt0_carry_i_17_n_0;
+  wire intrpt0_carry_i_18_n_0;
+  wire intrpt0_carry_i_19_n_0;
+  wire intrpt0_carry_i_1_n_0;
+  wire intrpt0_carry_i_2_n_0;
+  wire intrpt0_carry_i_3_n_0;
+  wire intrpt0_carry_i_4_n_0;
+  wire intrpt0_carry_i_5_n_0;
+  wire intrpt0_carry_i_5_n_1;
+  wire intrpt0_carry_i_5_n_2;
+  wire intrpt0_carry_i_5_n_3;
+  wire intrpt0_carry_i_6_n_0;
+  wire intrpt0_carry_i_6_n_1;
+  wire intrpt0_carry_i_6_n_2;
+  wire intrpt0_carry_i_6_n_3;
+  wire intrpt0_carry_i_7_n_0;
+  wire intrpt0_carry_i_7_n_1;
+  wire intrpt0_carry_i_7_n_2;
+  wire intrpt0_carry_i_7_n_3;
+  wire intrpt0_carry_i_8_n_0;
+  wire intrpt0_carry_i_9_n_0;
+  wire intrpt0_carry_n_0;
+  wire intrpt0_carry_n_1;
+  wire intrpt0_carry_n_2;
+  wire intrpt0_carry_n_3;
+  wire [30:0]intrpt1;
   wire [2:0]p_0_in;
   wire [31:0]reg_data_out__0;
   wire s00_axi_aclk;
@@ -572,92 +668,6 @@ module motorctrl_PWM_0_0_PWM_v1_0_S00_AXI
   wire \slv_reg3_reg_n_0_[7] ;
   wire \slv_reg3_reg_n_0_[8] ;
   wire \slv_reg3_reg_n_0_[9] ;
-  wire [0:0]slv_reg4;
-  wire slv_reg40_carry__0_i_10_n_0;
-  wire slv_reg40_carry__0_i_11_n_0;
-  wire slv_reg40_carry__0_i_12_n_0;
-  wire slv_reg40_carry__0_i_13_n_0;
-  wire slv_reg40_carry__0_i_14_n_0;
-  wire slv_reg40_carry__0_i_15_n_0;
-  wire slv_reg40_carry__0_i_16_n_0;
-  wire slv_reg40_carry__0_i_17_n_0;
-  wire slv_reg40_carry__0_i_18_n_0;
-  wire slv_reg40_carry__0_i_19_n_0;
-  wire slv_reg40_carry__0_i_1_n_0;
-  wire slv_reg40_carry__0_i_2_n_0;
-  wire slv_reg40_carry__0_i_3_n_0;
-  wire slv_reg40_carry__0_i_4_n_0;
-  wire slv_reg40_carry__0_i_5_n_0;
-  wire slv_reg40_carry__0_i_5_n_1;
-  wire slv_reg40_carry__0_i_5_n_2;
-  wire slv_reg40_carry__0_i_5_n_3;
-  wire slv_reg40_carry__0_i_6_n_0;
-  wire slv_reg40_carry__0_i_6_n_1;
-  wire slv_reg40_carry__0_i_6_n_2;
-  wire slv_reg40_carry__0_i_6_n_3;
-  wire slv_reg40_carry__0_i_7_n_0;
-  wire slv_reg40_carry__0_i_7_n_1;
-  wire slv_reg40_carry__0_i_7_n_2;
-  wire slv_reg40_carry__0_i_7_n_3;
-  wire slv_reg40_carry__0_i_8_n_0;
-  wire slv_reg40_carry__0_i_9_n_0;
-  wire slv_reg40_carry__0_n_0;
-  wire slv_reg40_carry__0_n_1;
-  wire slv_reg40_carry__0_n_2;
-  wire slv_reg40_carry__0_n_3;
-  wire slv_reg40_carry__1_i_10_n_0;
-  wire slv_reg40_carry__1_i_11_n_0;
-  wire slv_reg40_carry__1_i_12_n_0;
-  wire slv_reg40_carry__1_i_1_n_0;
-  wire slv_reg40_carry__1_i_2_n_0;
-  wire slv_reg40_carry__1_i_3_n_0;
-  wire slv_reg40_carry__1_i_4_n_0;
-  wire slv_reg40_carry__1_i_4_n_2;
-  wire slv_reg40_carry__1_i_4_n_3;
-  wire slv_reg40_carry__1_i_5_n_0;
-  wire slv_reg40_carry__1_i_5_n_1;
-  wire slv_reg40_carry__1_i_5_n_2;
-  wire slv_reg40_carry__1_i_5_n_3;
-  wire slv_reg40_carry__1_i_6_n_0;
-  wire slv_reg40_carry__1_i_7_n_0;
-  wire slv_reg40_carry__1_i_8_n_0;
-  wire slv_reg40_carry__1_i_9_n_0;
-  wire slv_reg40_carry__1_n_2;
-  wire slv_reg40_carry__1_n_3;
-  wire slv_reg40_carry_i_10_n_0;
-  wire slv_reg40_carry_i_11_n_0;
-  wire slv_reg40_carry_i_12_n_0;
-  wire slv_reg40_carry_i_13_n_0;
-  wire slv_reg40_carry_i_14_n_0;
-  wire slv_reg40_carry_i_15_n_0;
-  wire slv_reg40_carry_i_16_n_0;
-  wire slv_reg40_carry_i_17_n_0;
-  wire slv_reg40_carry_i_18_n_0;
-  wire slv_reg40_carry_i_19_n_0;
-  wire slv_reg40_carry_i_1_n_0;
-  wire slv_reg40_carry_i_2_n_0;
-  wire slv_reg40_carry_i_3_n_0;
-  wire slv_reg40_carry_i_4_n_0;
-  wire slv_reg40_carry_i_5_n_0;
-  wire slv_reg40_carry_i_5_n_1;
-  wire slv_reg40_carry_i_5_n_2;
-  wire slv_reg40_carry_i_5_n_3;
-  wire slv_reg40_carry_i_6_n_0;
-  wire slv_reg40_carry_i_6_n_1;
-  wire slv_reg40_carry_i_6_n_2;
-  wire slv_reg40_carry_i_6_n_3;
-  wire slv_reg40_carry_i_7_n_0;
-  wire slv_reg40_carry_i_7_n_1;
-  wire slv_reg40_carry_i_7_n_2;
-  wire slv_reg40_carry_i_7_n_3;
-  wire slv_reg40_carry_i_8_n_0;
-  wire slv_reg40_carry_i_9_n_0;
-  wire slv_reg40_carry_n_0;
-  wire slv_reg40_carry_n_1;
-  wire slv_reg40_carry_n_2;
-  wire slv_reg40_carry_n_3;
-  wire [30:0]slv_reg41;
-  wire \slv_reg4_reg_n_0_[0] ;
   wire [31:0]slv_reg5;
   wire \slv_reg5[15]_i_1_n_0 ;
   wire \slv_reg5[23]_i_1_n_0 ;
@@ -684,12 +694,12 @@ module motorctrl_PWM_0_0_PWM_v1_0_S00_AXI
   wire [3:0]NLW_count_int1_carry__1_O_UNCONNECTED;
   wire [3:0]NLW_count_int1_carry__2_O_UNCONNECTED;
   wire [3:3]\NLW_count_int_reg[28]_i_1_CO_UNCONNECTED ;
-  wire [3:0]NLW_slv_reg40_carry_O_UNCONNECTED;
-  wire [3:0]NLW_slv_reg40_carry__0_O_UNCONNECTED;
-  wire [3:3]NLW_slv_reg40_carry__1_CO_UNCONNECTED;
-  wire [3:0]NLW_slv_reg40_carry__1_O_UNCONNECTED;
-  wire [2:2]NLW_slv_reg40_carry__1_i_4_CO_UNCONNECTED;
-  wire [3:3]NLW_slv_reg40_carry__1_i_4_O_UNCONNECTED;
+  wire [3:0]NLW_intrpt0_carry_O_UNCONNECTED;
+  wire [3:0]NLW_intrpt0_carry__0_O_UNCONNECTED;
+  wire [3:3]NLW_intrpt0_carry__1_CO_UNCONNECTED;
+  wire [3:0]NLW_intrpt0_carry__1_O_UNCONNECTED;
+  wire [2:2]NLW_intrpt0_carry__1_i_4_CO_UNCONNECTED;
+  wire [3:3]NLW_intrpt0_carry__1_i_4_O_UNCONNECTED;
 
   CARRY4 PWM1_carry
        (.CI(1'b0),
@@ -1312,15 +1322,14 @@ module motorctrl_PWM_0_0_PWM_v1_0_S00_AXI
         .I4(sel0[0]),
         .I5(slv_reg0[0]),
         .O(\axi_rdata[0]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'hAFA0CFCFAFA0C0C0)) 
+  LUT5 #(
+    .INIT(32'hAFC0A0C0)) 
     \axi_rdata[0]_i_3 
        (.I0(slv_reg7[0]),
         .I1(slv_reg6[0]),
         .I2(sel0[1]),
-        .I3(slv_reg5[0]),
-        .I4(sel0[0]),
-        .I5(\slv_reg4_reg_n_0_[0] ),
+        .I3(sel0[0]),
+        .I4(slv_reg5[0]),
         .O(\axi_rdata[0]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
@@ -3367,6 +3376,386 @@ module motorctrl_PWM_0_0_PWM_v1_0_S00_AXI
         .D(slv_reg0[9]),
         .Q(freq[9]),
         .R(1'b0));
+  CARRY4 intrpt0_carry
+       (.CI(1'b0),
+        .CO({intrpt0_carry_n_0,intrpt0_carry_n_1,intrpt0_carry_n_2,intrpt0_carry_n_3}),
+        .CYINIT(1'b1),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(NLW_intrpt0_carry_O_UNCONNECTED[3:0]),
+        .S({intrpt0_carry_i_1_n_0,intrpt0_carry_i_2_n_0,intrpt0_carry_i_3_n_0,intrpt0_carry_i_4_n_0}));
+  CARRY4 intrpt0_carry__0
+       (.CI(intrpt0_carry_n_0),
+        .CO({intrpt0_carry__0_n_0,intrpt0_carry__0_n_1,intrpt0_carry__0_n_2,intrpt0_carry__0_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(NLW_intrpt0_carry__0_O_UNCONNECTED[3:0]),
+        .S({intrpt0_carry__0_i_1_n_0,intrpt0_carry__0_i_2_n_0,intrpt0_carry__0_i_3_n_0,intrpt0_carry__0_i_4_n_0}));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry__0_i_1
+       (.I0(count_int_reg[21]),
+        .I1(intrpt1[21]),
+        .I2(intrpt1[23]),
+        .I3(count_int_reg[23]),
+        .I4(intrpt1[22]),
+        .I5(count_int_reg[22]),
+        .O(intrpt0_carry__0_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_10
+       (.I0(freq[21]),
+        .I1(adc_time_reg[21]),
+        .O(intrpt0_carry__0_i_10_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_11
+       (.I0(freq[20]),
+        .I1(adc_time_reg[20]),
+        .O(intrpt0_carry__0_i_11_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_12
+       (.I0(freq[19]),
+        .I1(adc_time_reg[19]),
+        .O(intrpt0_carry__0_i_12_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_13
+       (.I0(freq[18]),
+        .I1(adc_time_reg[18]),
+        .O(intrpt0_carry__0_i_13_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_14
+       (.I0(freq[17]),
+        .I1(adc_time_reg[17]),
+        .O(intrpt0_carry__0_i_14_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_15
+       (.I0(freq[16]),
+        .I1(adc_time_reg[16]),
+        .O(intrpt0_carry__0_i_15_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_16
+       (.I0(freq[15]),
+        .I1(adc_time_reg[15]),
+        .O(intrpt0_carry__0_i_16_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_17
+       (.I0(freq[14]),
+        .I1(adc_time_reg[14]),
+        .O(intrpt0_carry__0_i_17_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_18
+       (.I0(freq[13]),
+        .I1(adc_time_reg[13]),
+        .O(intrpt0_carry__0_i_18_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_19
+       (.I0(freq[12]),
+        .I1(adc_time_reg[12]),
+        .O(intrpt0_carry__0_i_19_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry__0_i_2
+       (.I0(count_int_reg[18]),
+        .I1(intrpt1[18]),
+        .I2(intrpt1[20]),
+        .I3(count_int_reg[20]),
+        .I4(intrpt1[19]),
+        .I5(count_int_reg[19]),
+        .O(intrpt0_carry__0_i_2_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry__0_i_3
+       (.I0(count_int_reg[15]),
+        .I1(intrpt1[15]),
+        .I2(intrpt1[17]),
+        .I3(count_int_reg[17]),
+        .I4(intrpt1[16]),
+        .I5(count_int_reg[16]),
+        .O(intrpt0_carry__0_i_3_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry__0_i_4
+       (.I0(count_int_reg[12]),
+        .I1(intrpt1[12]),
+        .I2(intrpt1[14]),
+        .I3(count_int_reg[14]),
+        .I4(intrpt1[13]),
+        .I5(count_int_reg[13]),
+        .O(intrpt0_carry__0_i_4_n_0));
+  CARRY4 intrpt0_carry__0_i_5
+       (.CI(intrpt0_carry__0_i_6_n_0),
+        .CO({intrpt0_carry__0_i_5_n_0,intrpt0_carry__0_i_5_n_1,intrpt0_carry__0_i_5_n_2,intrpt0_carry__0_i_5_n_3}),
+        .CYINIT(1'b0),
+        .DI(freq[23:20]),
+        .O(intrpt1[23:20]),
+        .S({intrpt0_carry__0_i_8_n_0,intrpt0_carry__0_i_9_n_0,intrpt0_carry__0_i_10_n_0,intrpt0_carry__0_i_11_n_0}));
+  CARRY4 intrpt0_carry__0_i_6
+       (.CI(intrpt0_carry__0_i_7_n_0),
+        .CO({intrpt0_carry__0_i_6_n_0,intrpt0_carry__0_i_6_n_1,intrpt0_carry__0_i_6_n_2,intrpt0_carry__0_i_6_n_3}),
+        .CYINIT(1'b0),
+        .DI(freq[19:16]),
+        .O(intrpt1[19:16]),
+        .S({intrpt0_carry__0_i_12_n_0,intrpt0_carry__0_i_13_n_0,intrpt0_carry__0_i_14_n_0,intrpt0_carry__0_i_15_n_0}));
+  CARRY4 intrpt0_carry__0_i_7
+       (.CI(intrpt0_carry_i_5_n_0),
+        .CO({intrpt0_carry__0_i_7_n_0,intrpt0_carry__0_i_7_n_1,intrpt0_carry__0_i_7_n_2,intrpt0_carry__0_i_7_n_3}),
+        .CYINIT(1'b0),
+        .DI(freq[15:12]),
+        .O(intrpt1[15:12]),
+        .S({intrpt0_carry__0_i_16_n_0,intrpt0_carry__0_i_17_n_0,intrpt0_carry__0_i_18_n_0,intrpt0_carry__0_i_19_n_0}));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_8
+       (.I0(freq[23]),
+        .I1(adc_time_reg[23]),
+        .O(intrpt0_carry__0_i_8_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__0_i_9
+       (.I0(freq[22]),
+        .I1(adc_time_reg[22]),
+        .O(intrpt0_carry__0_i_9_n_0));
+  CARRY4 intrpt0_carry__1
+       (.CI(intrpt0_carry__0_n_0),
+        .CO({NLW_intrpt0_carry__1_CO_UNCONNECTED[3],intrpt0_carry__1_n_1,intrpt0_carry__1_n_2,intrpt0_carry__1_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(NLW_intrpt0_carry__1_O_UNCONNECTED[3:0]),
+        .S({1'b0,intrpt0_carry__1_i_1_n_0,intrpt0_carry__1_i_2_n_0,intrpt0_carry__1_i_3_n_0}));
+  LUT4 #(
+    .INIT(16'h0990)) 
+    intrpt0_carry__1_i_1
+       (.I0(count_int_reg[30]),
+        .I1(intrpt1[30]),
+        .I2(count_int_reg[31]),
+        .I3(intrpt0_carry__1_i_4_n_0),
+        .O(intrpt0_carry__1_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__1_i_10
+       (.I0(freq[26]),
+        .I1(adc_time_reg[26]),
+        .O(intrpt0_carry__1_i_10_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__1_i_11
+       (.I0(freq[25]),
+        .I1(adc_time_reg[25]),
+        .O(intrpt0_carry__1_i_11_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__1_i_12
+       (.I0(freq[24]),
+        .I1(adc_time_reg[24]),
+        .O(intrpt0_carry__1_i_12_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry__1_i_2
+       (.I0(count_int_reg[27]),
+        .I1(intrpt1[27]),
+        .I2(intrpt1[29]),
+        .I3(count_int_reg[29]),
+        .I4(intrpt1[28]),
+        .I5(count_int_reg[28]),
+        .O(intrpt0_carry__1_i_2_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry__1_i_3
+       (.I0(count_int_reg[24]),
+        .I1(intrpt1[24]),
+        .I2(intrpt1[26]),
+        .I3(count_int_reg[26]),
+        .I4(intrpt1[25]),
+        .I5(count_int_reg[25]),
+        .O(intrpt0_carry__1_i_3_n_0));
+  CARRY4 intrpt0_carry__1_i_4
+       (.CI(intrpt0_carry__1_i_5_n_0),
+        .CO({intrpt0_carry__1_i_4_n_0,NLW_intrpt0_carry__1_i_4_CO_UNCONNECTED[2],intrpt0_carry__1_i_4_n_2,intrpt0_carry__1_i_4_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,freq[30:28]}),
+        .O({NLW_intrpt0_carry__1_i_4_O_UNCONNECTED[3],intrpt1[30:28]}),
+        .S({1'b1,intrpt0_carry__1_i_6_n_0,intrpt0_carry__1_i_7_n_0,intrpt0_carry__1_i_8_n_0}));
+  CARRY4 intrpt0_carry__1_i_5
+       (.CI(intrpt0_carry__0_i_5_n_0),
+        .CO({intrpt0_carry__1_i_5_n_0,intrpt0_carry__1_i_5_n_1,intrpt0_carry__1_i_5_n_2,intrpt0_carry__1_i_5_n_3}),
+        .CYINIT(1'b0),
+        .DI(freq[27:24]),
+        .O(intrpt1[27:24]),
+        .S({intrpt0_carry__1_i_9_n_0,intrpt0_carry__1_i_10_n_0,intrpt0_carry__1_i_11_n_0,intrpt0_carry__1_i_12_n_0}));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__1_i_6
+       (.I0(freq[30]),
+        .I1(adc_time_reg[30]),
+        .O(intrpt0_carry__1_i_6_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__1_i_7
+       (.I0(freq[29]),
+        .I1(adc_time_reg[29]),
+        .O(intrpt0_carry__1_i_7_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__1_i_8
+       (.I0(freq[28]),
+        .I1(adc_time_reg[28]),
+        .O(intrpt0_carry__1_i_8_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry__1_i_9
+       (.I0(freq[27]),
+        .I1(adc_time_reg[27]),
+        .O(intrpt0_carry__1_i_9_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry_i_1
+       (.I0(count_int_reg[9]),
+        .I1(intrpt1[9]),
+        .I2(intrpt1[11]),
+        .I3(count_int_reg[11]),
+        .I4(intrpt1[10]),
+        .I5(count_int_reg[10]),
+        .O(intrpt0_carry_i_1_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_10
+       (.I0(freq[9]),
+        .I1(adc_time_reg[9]),
+        .O(intrpt0_carry_i_10_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_11
+       (.I0(freq[8]),
+        .I1(adc_time_reg[8]),
+        .O(intrpt0_carry_i_11_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_12
+       (.I0(freq[7]),
+        .I1(adc_time_reg[7]),
+        .O(intrpt0_carry_i_12_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_13
+       (.I0(freq[6]),
+        .I1(adc_time_reg[6]),
+        .O(intrpt0_carry_i_13_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_14
+       (.I0(freq[5]),
+        .I1(adc_time_reg[5]),
+        .O(intrpt0_carry_i_14_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_15
+       (.I0(freq[4]),
+        .I1(adc_time_reg[4]),
+        .O(intrpt0_carry_i_15_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_16
+       (.I0(freq[3]),
+        .I1(adc_time_reg[3]),
+        .O(intrpt0_carry_i_16_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_17
+       (.I0(freq[2]),
+        .I1(adc_time_reg[2]),
+        .O(intrpt0_carry_i_17_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_18
+       (.I0(freq[1]),
+        .I1(adc_time_reg[1]),
+        .O(intrpt0_carry_i_18_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_19
+       (.I0(freq[0]),
+        .I1(adc_time_reg[0]),
+        .O(intrpt0_carry_i_19_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry_i_2
+       (.I0(count_int_reg[6]),
+        .I1(intrpt1[6]),
+        .I2(intrpt1[8]),
+        .I3(count_int_reg[8]),
+        .I4(intrpt1[7]),
+        .I5(count_int_reg[7]),
+        .O(intrpt0_carry_i_2_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry_i_3
+       (.I0(count_int_reg[3]),
+        .I1(intrpt1[3]),
+        .I2(intrpt1[5]),
+        .I3(count_int_reg[5]),
+        .I4(intrpt1[4]),
+        .I5(count_int_reg[4]),
+        .O(intrpt0_carry_i_3_n_0));
+  LUT6 #(
+    .INIT(64'h9009000000009009)) 
+    intrpt0_carry_i_4
+       (.I0(count_int_reg[0]),
+        .I1(intrpt1[0]),
+        .I2(intrpt1[2]),
+        .I3(count_int_reg[2]),
+        .I4(intrpt1[1]),
+        .I5(count_int_reg[1]),
+        .O(intrpt0_carry_i_4_n_0));
+  CARRY4 intrpt0_carry_i_5
+       (.CI(intrpt0_carry_i_6_n_0),
+        .CO({intrpt0_carry_i_5_n_0,intrpt0_carry_i_5_n_1,intrpt0_carry_i_5_n_2,intrpt0_carry_i_5_n_3}),
+        .CYINIT(1'b0),
+        .DI(freq[11:8]),
+        .O(intrpt1[11:8]),
+        .S({intrpt0_carry_i_8_n_0,intrpt0_carry_i_9_n_0,intrpt0_carry_i_10_n_0,intrpt0_carry_i_11_n_0}));
+  CARRY4 intrpt0_carry_i_6
+       (.CI(intrpt0_carry_i_7_n_0),
+        .CO({intrpt0_carry_i_6_n_0,intrpt0_carry_i_6_n_1,intrpt0_carry_i_6_n_2,intrpt0_carry_i_6_n_3}),
+        .CYINIT(1'b0),
+        .DI(freq[7:4]),
+        .O(intrpt1[7:4]),
+        .S({intrpt0_carry_i_12_n_0,intrpt0_carry_i_13_n_0,intrpt0_carry_i_14_n_0,intrpt0_carry_i_15_n_0}));
+  CARRY4 intrpt0_carry_i_7
+       (.CI(1'b0),
+        .CO({intrpt0_carry_i_7_n_0,intrpt0_carry_i_7_n_1,intrpt0_carry_i_7_n_2,intrpt0_carry_i_7_n_3}),
+        .CYINIT(1'b1),
+        .DI(freq[3:0]),
+        .O(intrpt1[3:0]),
+        .S({intrpt0_carry_i_16_n_0,intrpt0_carry_i_17_n_0,intrpt0_carry_i_18_n_0,intrpt0_carry_i_19_n_0}));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_8
+       (.I0(freq[11]),
+        .I1(adc_time_reg[11]),
+        .O(intrpt0_carry_i_8_n_0));
+  LUT2 #(
+    .INIT(4'h9)) 
+    intrpt0_carry_i_9
+       (.I0(freq[10]),
+        .I1(adc_time_reg[10]),
+        .O(intrpt0_carry_i_9_n_0));
+  (* XILINX_LEGACY_PRIM = "LDC" *) 
+  LDCE #(
+    .INIT(1'b0)) 
+    intrpt_reg
+       (.CLR(slv_reg3),
+        .D(intrpt0_carry__1_n_1),
+        .G(intrpt0_carry__1_n_1),
+        .GE(1'b1),
+        .Q(intrpt));
   LUT5 #(
     .INIT(32'h00010000)) 
     \slv_reg0[15]_i_1 
@@ -4290,386 +4679,6 @@ module motorctrl_PWM_0_0_PWM_v1_0_S00_AXI
         .D(s00_axi_wdata[9]),
         .Q(\slv_reg3_reg_n_0_[9] ),
         .R(RESET));
-  CARRY4 slv_reg40_carry
-       (.CI(1'b0),
-        .CO({slv_reg40_carry_n_0,slv_reg40_carry_n_1,slv_reg40_carry_n_2,slv_reg40_carry_n_3}),
-        .CYINIT(1'b1),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(NLW_slv_reg40_carry_O_UNCONNECTED[3:0]),
-        .S({slv_reg40_carry_i_1_n_0,slv_reg40_carry_i_2_n_0,slv_reg40_carry_i_3_n_0,slv_reg40_carry_i_4_n_0}));
-  CARRY4 slv_reg40_carry__0
-       (.CI(slv_reg40_carry_n_0),
-        .CO({slv_reg40_carry__0_n_0,slv_reg40_carry__0_n_1,slv_reg40_carry__0_n_2,slv_reg40_carry__0_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(NLW_slv_reg40_carry__0_O_UNCONNECTED[3:0]),
-        .S({slv_reg40_carry__0_i_1_n_0,slv_reg40_carry__0_i_2_n_0,slv_reg40_carry__0_i_3_n_0,slv_reg40_carry__0_i_4_n_0}));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry__0_i_1
-       (.I0(count_int_reg[21]),
-        .I1(slv_reg41[21]),
-        .I2(slv_reg41[23]),
-        .I3(count_int_reg[23]),
-        .I4(slv_reg41[22]),
-        .I5(count_int_reg[22]),
-        .O(slv_reg40_carry__0_i_1_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_10
-       (.I0(freq[21]),
-        .I1(adc_time_reg[21]),
-        .O(slv_reg40_carry__0_i_10_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_11
-       (.I0(freq[20]),
-        .I1(adc_time_reg[20]),
-        .O(slv_reg40_carry__0_i_11_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_12
-       (.I0(freq[19]),
-        .I1(adc_time_reg[19]),
-        .O(slv_reg40_carry__0_i_12_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_13
-       (.I0(freq[18]),
-        .I1(adc_time_reg[18]),
-        .O(slv_reg40_carry__0_i_13_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_14
-       (.I0(freq[17]),
-        .I1(adc_time_reg[17]),
-        .O(slv_reg40_carry__0_i_14_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_15
-       (.I0(freq[16]),
-        .I1(adc_time_reg[16]),
-        .O(slv_reg40_carry__0_i_15_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_16
-       (.I0(freq[15]),
-        .I1(adc_time_reg[15]),
-        .O(slv_reg40_carry__0_i_16_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_17
-       (.I0(freq[14]),
-        .I1(adc_time_reg[14]),
-        .O(slv_reg40_carry__0_i_17_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_18
-       (.I0(freq[13]),
-        .I1(adc_time_reg[13]),
-        .O(slv_reg40_carry__0_i_18_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_19
-       (.I0(freq[12]),
-        .I1(adc_time_reg[12]),
-        .O(slv_reg40_carry__0_i_19_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry__0_i_2
-       (.I0(count_int_reg[18]),
-        .I1(slv_reg41[18]),
-        .I2(slv_reg41[20]),
-        .I3(count_int_reg[20]),
-        .I4(slv_reg41[19]),
-        .I5(count_int_reg[19]),
-        .O(slv_reg40_carry__0_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry__0_i_3
-       (.I0(count_int_reg[15]),
-        .I1(slv_reg41[15]),
-        .I2(slv_reg41[17]),
-        .I3(count_int_reg[17]),
-        .I4(slv_reg41[16]),
-        .I5(count_int_reg[16]),
-        .O(slv_reg40_carry__0_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry__0_i_4
-       (.I0(count_int_reg[12]),
-        .I1(slv_reg41[12]),
-        .I2(slv_reg41[14]),
-        .I3(count_int_reg[14]),
-        .I4(slv_reg41[13]),
-        .I5(count_int_reg[13]),
-        .O(slv_reg40_carry__0_i_4_n_0));
-  CARRY4 slv_reg40_carry__0_i_5
-       (.CI(slv_reg40_carry__0_i_6_n_0),
-        .CO({slv_reg40_carry__0_i_5_n_0,slv_reg40_carry__0_i_5_n_1,slv_reg40_carry__0_i_5_n_2,slv_reg40_carry__0_i_5_n_3}),
-        .CYINIT(1'b0),
-        .DI(freq[23:20]),
-        .O(slv_reg41[23:20]),
-        .S({slv_reg40_carry__0_i_8_n_0,slv_reg40_carry__0_i_9_n_0,slv_reg40_carry__0_i_10_n_0,slv_reg40_carry__0_i_11_n_0}));
-  CARRY4 slv_reg40_carry__0_i_6
-       (.CI(slv_reg40_carry__0_i_7_n_0),
-        .CO({slv_reg40_carry__0_i_6_n_0,slv_reg40_carry__0_i_6_n_1,slv_reg40_carry__0_i_6_n_2,slv_reg40_carry__0_i_6_n_3}),
-        .CYINIT(1'b0),
-        .DI(freq[19:16]),
-        .O(slv_reg41[19:16]),
-        .S({slv_reg40_carry__0_i_12_n_0,slv_reg40_carry__0_i_13_n_0,slv_reg40_carry__0_i_14_n_0,slv_reg40_carry__0_i_15_n_0}));
-  CARRY4 slv_reg40_carry__0_i_7
-       (.CI(slv_reg40_carry_i_5_n_0),
-        .CO({slv_reg40_carry__0_i_7_n_0,slv_reg40_carry__0_i_7_n_1,slv_reg40_carry__0_i_7_n_2,slv_reg40_carry__0_i_7_n_3}),
-        .CYINIT(1'b0),
-        .DI(freq[15:12]),
-        .O(slv_reg41[15:12]),
-        .S({slv_reg40_carry__0_i_16_n_0,slv_reg40_carry__0_i_17_n_0,slv_reg40_carry__0_i_18_n_0,slv_reg40_carry__0_i_19_n_0}));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_8
-       (.I0(freq[23]),
-        .I1(adc_time_reg[23]),
-        .O(slv_reg40_carry__0_i_8_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__0_i_9
-       (.I0(freq[22]),
-        .I1(adc_time_reg[22]),
-        .O(slv_reg40_carry__0_i_9_n_0));
-  CARRY4 slv_reg40_carry__1
-       (.CI(slv_reg40_carry__0_n_0),
-        .CO({NLW_slv_reg40_carry__1_CO_UNCONNECTED[3],slv_reg4,slv_reg40_carry__1_n_2,slv_reg40_carry__1_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(NLW_slv_reg40_carry__1_O_UNCONNECTED[3:0]),
-        .S({1'b0,slv_reg40_carry__1_i_1_n_0,slv_reg40_carry__1_i_2_n_0,slv_reg40_carry__1_i_3_n_0}));
-  LUT4 #(
-    .INIT(16'h0990)) 
-    slv_reg40_carry__1_i_1
-       (.I0(count_int_reg[30]),
-        .I1(slv_reg41[30]),
-        .I2(count_int_reg[31]),
-        .I3(slv_reg40_carry__1_i_4_n_0),
-        .O(slv_reg40_carry__1_i_1_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__1_i_10
-       (.I0(freq[26]),
-        .I1(adc_time_reg[26]),
-        .O(slv_reg40_carry__1_i_10_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__1_i_11
-       (.I0(freq[25]),
-        .I1(adc_time_reg[25]),
-        .O(slv_reg40_carry__1_i_11_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__1_i_12
-       (.I0(freq[24]),
-        .I1(adc_time_reg[24]),
-        .O(slv_reg40_carry__1_i_12_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry__1_i_2
-       (.I0(count_int_reg[27]),
-        .I1(slv_reg41[27]),
-        .I2(slv_reg41[29]),
-        .I3(count_int_reg[29]),
-        .I4(slv_reg41[28]),
-        .I5(count_int_reg[28]),
-        .O(slv_reg40_carry__1_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry__1_i_3
-       (.I0(count_int_reg[24]),
-        .I1(slv_reg41[24]),
-        .I2(slv_reg41[26]),
-        .I3(count_int_reg[26]),
-        .I4(slv_reg41[25]),
-        .I5(count_int_reg[25]),
-        .O(slv_reg40_carry__1_i_3_n_0));
-  CARRY4 slv_reg40_carry__1_i_4
-       (.CI(slv_reg40_carry__1_i_5_n_0),
-        .CO({slv_reg40_carry__1_i_4_n_0,NLW_slv_reg40_carry__1_i_4_CO_UNCONNECTED[2],slv_reg40_carry__1_i_4_n_2,slv_reg40_carry__1_i_4_n_3}),
-        .CYINIT(1'b0),
-        .DI({1'b0,freq[30:28]}),
-        .O({NLW_slv_reg40_carry__1_i_4_O_UNCONNECTED[3],slv_reg41[30:28]}),
-        .S({1'b1,slv_reg40_carry__1_i_6_n_0,slv_reg40_carry__1_i_7_n_0,slv_reg40_carry__1_i_8_n_0}));
-  CARRY4 slv_reg40_carry__1_i_5
-       (.CI(slv_reg40_carry__0_i_5_n_0),
-        .CO({slv_reg40_carry__1_i_5_n_0,slv_reg40_carry__1_i_5_n_1,slv_reg40_carry__1_i_5_n_2,slv_reg40_carry__1_i_5_n_3}),
-        .CYINIT(1'b0),
-        .DI(freq[27:24]),
-        .O(slv_reg41[27:24]),
-        .S({slv_reg40_carry__1_i_9_n_0,slv_reg40_carry__1_i_10_n_0,slv_reg40_carry__1_i_11_n_0,slv_reg40_carry__1_i_12_n_0}));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__1_i_6
-       (.I0(freq[30]),
-        .I1(adc_time_reg[30]),
-        .O(slv_reg40_carry__1_i_6_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__1_i_7
-       (.I0(freq[29]),
-        .I1(adc_time_reg[29]),
-        .O(slv_reg40_carry__1_i_7_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__1_i_8
-       (.I0(freq[28]),
-        .I1(adc_time_reg[28]),
-        .O(slv_reg40_carry__1_i_8_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry__1_i_9
-       (.I0(freq[27]),
-        .I1(adc_time_reg[27]),
-        .O(slv_reg40_carry__1_i_9_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry_i_1
-       (.I0(count_int_reg[9]),
-        .I1(slv_reg41[9]),
-        .I2(slv_reg41[11]),
-        .I3(count_int_reg[11]),
-        .I4(slv_reg41[10]),
-        .I5(count_int_reg[10]),
-        .O(slv_reg40_carry_i_1_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_10
-       (.I0(freq[9]),
-        .I1(adc_time_reg[9]),
-        .O(slv_reg40_carry_i_10_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_11
-       (.I0(freq[8]),
-        .I1(adc_time_reg[8]),
-        .O(slv_reg40_carry_i_11_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_12
-       (.I0(freq[7]),
-        .I1(adc_time_reg[7]),
-        .O(slv_reg40_carry_i_12_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_13
-       (.I0(freq[6]),
-        .I1(adc_time_reg[6]),
-        .O(slv_reg40_carry_i_13_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_14
-       (.I0(freq[5]),
-        .I1(adc_time_reg[5]),
-        .O(slv_reg40_carry_i_14_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_15
-       (.I0(freq[4]),
-        .I1(adc_time_reg[4]),
-        .O(slv_reg40_carry_i_15_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_16
-       (.I0(freq[3]),
-        .I1(adc_time_reg[3]),
-        .O(slv_reg40_carry_i_16_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_17
-       (.I0(freq[2]),
-        .I1(adc_time_reg[2]),
-        .O(slv_reg40_carry_i_17_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_18
-       (.I0(freq[1]),
-        .I1(adc_time_reg[1]),
-        .O(slv_reg40_carry_i_18_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_19
-       (.I0(freq[0]),
-        .I1(adc_time_reg[0]),
-        .O(slv_reg40_carry_i_19_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry_i_2
-       (.I0(count_int_reg[6]),
-        .I1(slv_reg41[6]),
-        .I2(slv_reg41[8]),
-        .I3(count_int_reg[8]),
-        .I4(slv_reg41[7]),
-        .I5(count_int_reg[7]),
-        .O(slv_reg40_carry_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry_i_3
-       (.I0(count_int_reg[3]),
-        .I1(slv_reg41[3]),
-        .I2(slv_reg41[5]),
-        .I3(count_int_reg[5]),
-        .I4(slv_reg41[4]),
-        .I5(count_int_reg[4]),
-        .O(slv_reg40_carry_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    slv_reg40_carry_i_4
-       (.I0(count_int_reg[0]),
-        .I1(slv_reg41[0]),
-        .I2(slv_reg41[2]),
-        .I3(count_int_reg[2]),
-        .I4(slv_reg41[1]),
-        .I5(count_int_reg[1]),
-        .O(slv_reg40_carry_i_4_n_0));
-  CARRY4 slv_reg40_carry_i_5
-       (.CI(slv_reg40_carry_i_6_n_0),
-        .CO({slv_reg40_carry_i_5_n_0,slv_reg40_carry_i_5_n_1,slv_reg40_carry_i_5_n_2,slv_reg40_carry_i_5_n_3}),
-        .CYINIT(1'b0),
-        .DI(freq[11:8]),
-        .O(slv_reg41[11:8]),
-        .S({slv_reg40_carry_i_8_n_0,slv_reg40_carry_i_9_n_0,slv_reg40_carry_i_10_n_0,slv_reg40_carry_i_11_n_0}));
-  CARRY4 slv_reg40_carry_i_6
-       (.CI(slv_reg40_carry_i_7_n_0),
-        .CO({slv_reg40_carry_i_6_n_0,slv_reg40_carry_i_6_n_1,slv_reg40_carry_i_6_n_2,slv_reg40_carry_i_6_n_3}),
-        .CYINIT(1'b0),
-        .DI(freq[7:4]),
-        .O(slv_reg41[7:4]),
-        .S({slv_reg40_carry_i_12_n_0,slv_reg40_carry_i_13_n_0,slv_reg40_carry_i_14_n_0,slv_reg40_carry_i_15_n_0}));
-  CARRY4 slv_reg40_carry_i_7
-       (.CI(1'b0),
-        .CO({slv_reg40_carry_i_7_n_0,slv_reg40_carry_i_7_n_1,slv_reg40_carry_i_7_n_2,slv_reg40_carry_i_7_n_3}),
-        .CYINIT(1'b1),
-        .DI(freq[3:0]),
-        .O(slv_reg41[3:0]),
-        .S({slv_reg40_carry_i_16_n_0,slv_reg40_carry_i_17_n_0,slv_reg40_carry_i_18_n_0,slv_reg40_carry_i_19_n_0}));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_8
-       (.I0(freq[11]),
-        .I1(adc_time_reg[11]),
-        .O(slv_reg40_carry_i_8_n_0));
-  LUT2 #(
-    .INIT(4'h9)) 
-    slv_reg40_carry_i_9
-       (.I0(freq[10]),
-        .I1(adc_time_reg[10]),
-        .O(slv_reg40_carry_i_9_n_0));
-  (* XILINX_LEGACY_PRIM = "LDC" *) 
-  LDCE #(
-    .INIT(1'b0)) 
-    \slv_reg4_reg[0] 
-       (.CLR(slv_reg3),
-        .D(slv_reg4),
-        .G(slv_reg4),
-        .GE(1'b1),
-        .Q(\slv_reg4_reg_n_0_[0] ));
   LUT5 #(
     .INIT(32'h00400000)) 
     \slv_reg5[15]_i_1 

@@ -1422,6 +1422,12 @@ CONFIG.INTERFACE_SELECTION.VALUE_SRC {DEFAULT} \
 CONFIG.VCCDDRO_ALARM_LOWER.VALUE_SRC {DEFAULT} \
  ] $xadc_wiz_0
 
+  # Create instance: xlconcat_0, and set properties
+  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+  set_property -dict [ list \
+CONFIG.NUM_PORTS {4} \
+ ] $xlconcat_0
+
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
@@ -1450,15 +1456,19 @@ CONFIG.CONST_WIDTH {2} \
 
   # Create port connections
   connect_bd_net -net PWM_0_PWM [get_bd_pins PWM_0/PWM] [get_bd_pins StateController_0/PWM]
+  connect_bd_net -net PWM_0_intrpt [get_bd_pins PWM_0/intrpt] [get_bd_pins xlconcat_0/In2]
   connect_bd_net -net StateController_0_PIN_A [get_bd_ports PIN_A] [get_bd_pins StateController_0/PIN_A]
   connect_bd_net -net StateController_0_PIN_B [get_bd_ports PIN_B] [get_bd_pins StateController_0/PIN_B]
   connect_bd_net -net StateController_0_PIN_C [get_bd_ports PIN_C] [get_bd_ports PIN_D] [get_bd_pins StateController_0/PIN_C]
   connect_bd_net -net StateController_0_TRIGGER [get_bd_ports TRIGGER] [get_bd_pins StateController_0/TRIGGER]
-  connect_bd_net -net axi_gpio_0_ip2intc_irpt [get_bd_pins axi_gpio_0/ip2intc_irpt] [get_bd_pins processing_system7_0/IRQ_F2P]
+  connect_bd_net -net StateController_0_intrpt [get_bd_pins StateController_0/intrpt] [get_bd_pins xlconcat_0/In3]
+  connect_bd_net -net axi_gpio_0_ip2intc_irpt [get_bd_pins axi_gpio_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins PI_CTRL_0/s00_axi_aclk] [get_bd_pins PWM_0/s00_axi_aclk] [get_bd_pins StateController_0/s00_axi_aclk] [get_bd_pins axi_gpio_0/s_axi_aclk] [get_bd_pins axi_gpio_1/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rst_ps7_0_100M/slowest_sync_clk] [get_bd_pins xadc_wiz_0/s_axi_aclk]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_100M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_100M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_100M/interconnect_aresetn]
   connect_bd_net -net rst_ps7_0_100M_peripheral_aresetn [get_bd_pins PI_CTRL_0/s00_axi_aresetn] [get_bd_pins PWM_0/s00_axi_aresetn] [get_bd_pins StateController_0/s00_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_1/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn] [get_bd_pins xadc_wiz_0/s_axi_aresetn]
+  connect_bd_net -net xadc_wiz_0_ip2intc_irpt [get_bd_pins xadc_wiz_0/ip2intc_irpt] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_0/IRQ_F2P] [get_bd_pins xlconcat_0/dout]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins xadc_wiz_0/vn_in] [get_bd_pins xadc_wiz_0/vp_in] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments
@@ -1473,60 +1483,65 @@ CONFIG.CONST_WIDTH {2} \
   regenerate_bd_layout -layout_string {
    guistr: "# # String gsaved with Nlview 6.6.5b  2016-09-06 bk=1.3687 VDI=39 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port SPY -pg 1 -y 70 -defaultsOSRD
-preplace port btns_4bits -pg 1 -y 240 -defaultsOSRD
-preplace port DDR -pg 1 -y 140 -defaultsOSRD
-preplace port TRIGGER -pg 1 -y 430 -defaultsOSRD
-preplace port sws_4bits -pg 1 -y 260 -defaultsOSRD
-preplace port leds_4bits -pg 1 -y 50 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 160 -defaultsOSRD
-preplace port Vaux6 -pg 1 -y 730 -defaultsOSRD
-preplace port Vaux14 -pg 1 -y 770 -defaultsOSRD
-preplace port Vaux7 -pg 1 -y 750 -defaultsOSRD
-preplace port Vaux15 -pg 1 -y 790 -defaultsOSRD
-preplace portBus PIN_A -pg 1 -y 350 -defaultsOSRD
-preplace portBus PIN_B -pg 1 -y 370 -defaultsOSRD
-preplace portBus PIN_C -pg 1 -y 390 -defaultsOSRD
-preplace portBus PIN_D -pg 1 -y 410 -defaultsOSRD
-preplace inst PI_CTRL_0 -pg 1 -lvl 3 -y 550 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 2 -y 680 -defaultsOSRD
-preplace inst xadc_wiz_0 -pg 1 -lvl 3 -y 750 -defaultsOSRD
-preplace inst StateController_0 -pg 1 -lvl 4 -y 390 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 4 -y 260 -defaultsOSRD
-preplace inst axi_gpio_1 -pg 1 -lvl 4 -y 60 -defaultsOSRD
-preplace inst PWM_0 -pg 1 -lvl 3 -y 430 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 400 -defaultsOSRD
-preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -y 460 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -y 230 -defaultsOSRD
-preplace netloc Vaux6_1 1 0 3 NJ 730 NJ 730 NJ
-preplace netloc processing_system7_0_DDR 1 1 4 NJ 140 NJ 140 NJ 140 NJ
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 2 720 40 NJ
-preplace netloc StateController_0_PIN_B 1 4 1 1250J
-preplace netloc StateController_0_PIN_C 1 4 1 1250J
-preplace netloc Vaux7_1 1 0 3 NJ 750 NJ 750 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 420
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 3 430 80 710 80 1000
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 370 410
-preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 N
-preplace netloc axi_gpio_1_GPIO2 1 4 1 NJ
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 2 730 240 NJ
-preplace netloc PWM_0_PWM 1 3 1 1010
-preplace netloc StateController_0_TRIGGER 1 4 1 1250
-preplace netloc xlconstant_0_dout 1 2 1 700
-preplace netloc axi_gpio_0_GPIO2 1 4 1 NJ
-preplace netloc Vaux14_1 1 0 3 NJ 770 NJ 770 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 160 NJ 160 NJ 160 NJ
-preplace netloc axi_gpio_0_GPIO 1 4 1 NJ
-preplace netloc axi_gpio_0_ip2intc_irpt 1 0 5 30 70 NJ 70 NJ 70 1010J 130 1250
-preplace netloc ps7_0_axi_periph_M05_AXI 1 2 1 700
-preplace netloc ps7_0_axi_periph_M04_AXI 1 2 2 700 360 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 20 60 440 60 750 60 1020
-preplace netloc axi_gpio_1_GPIO 1 4 1 NJ
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 740
-preplace netloc Vaux15_1 1 0 3 NJ 790 NJ 790 NJ
-preplace netloc StateController_0_PIN_A 1 4 1 1250J
-preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 1 1 420
-levelinfo -pg 1 0 220 570 880 1140 1280 -top 0 -bot 900
+preplace port SPY -pg 1 -y 300 -defaultsOSRD
+preplace port btns_4bits -pg 1 -y 390 -defaultsOSRD
+preplace port DDR -pg 1 -y 40 -defaultsOSRD
+preplace port TRIGGER -pg 1 -y 190 -defaultsOSRD
+preplace port sws_4bits -pg 1 -y 410 -defaultsOSRD
+preplace port leds_4bits -pg 1 -y 280 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 60 -defaultsOSRD
+preplace port Vaux6 -pg 1 -y 680 -defaultsOSRD
+preplace port Vaux14 -pg 1 -y 720 -defaultsOSRD
+preplace port Vaux7 -pg 1 -y 700 -defaultsOSRD
+preplace port Vaux15 -pg 1 -y 740 -defaultsOSRD
+preplace portBus PIN_A -pg 1 -y 110 -defaultsOSRD
+preplace portBus PIN_B -pg 1 -y 130 -defaultsOSRD
+preplace portBus PIN_C -pg 1 -y 150 -defaultsOSRD
+preplace portBus PIN_D -pg 1 -y 170 -defaultsOSRD
+preplace inst PI_CTRL_0 -pg 1 -lvl 4 -y 460 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 630 -defaultsOSRD
+preplace inst xadc_wiz_0 -pg 1 -lvl 4 -y 700 -defaultsOSRD
+preplace inst StateController_0 -pg 1 -lvl 5 -y 150 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 1 -y 450 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 5 -y 410 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 5 -y 290 -defaultsOSRD
+preplace inst PWM_0 -pg 1 -lvl 4 -y 340 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 3 -y 290 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -y 340 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -y 130 -defaultsOSRD
+preplace netloc Vaux6_1 1 0 4 NJ 680 NJ 680 NJ 680 NJ
+preplace netloc processing_system7_0_DDR 1 2 4 NJ 40 NJ 40 NJ 40 NJ
+preplace netloc ps7_0_axi_periph_M02_AXI 1 3 2 940J 270 N
+preplace netloc StateController_0_PIN_B 1 5 1 NJ
+preplace netloc StateController_0_PIN_C 1 5 1 1510
+preplace netloc Vaux7_1 1 0 4 NJ 700 NJ 700 NJ 700 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 1 630
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 2 3 640 70 930 70 1230
+preplace netloc xadc_wiz_0_ip2intc_irpt 1 0 5 30 850 NJ 850 NJ 850 NJ 850 1220
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 250 430 630
+preplace netloc ps7_0_axi_periph_M03_AXI 1 3 1 970
+preplace netloc axi_gpio_1_GPIO2 1 5 1 NJ
+preplace netloc ps7_0_axi_periph_M01_AXI 1 3 2 NJ 260 1250
+preplace netloc StateController_0_intrpt 1 0 6 50 540 NJ 540 NJ 540 NJ 540 NJ 540 1490
+preplace netloc PWM_0_PWM 1 4 1 1240
+preplace netloc xlconcat_0_dout 1 1 1 230
+preplace netloc StateController_0_TRIGGER 1 5 1 1500J
+preplace netloc xlconstant_0_dout 1 3 1 920
+preplace netloc axi_gpio_0_GPIO2 1 5 1 NJ
+preplace netloc Vaux14_1 1 0 4 NJ 720 NJ 720 NJ 720 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 4 NJ 60 NJ 60 NJ 60 NJ
+preplace netloc axi_gpio_0_GPIO 1 5 1 NJ
+preplace netloc PWM_0_intrpt 1 0 5 40 530 NJ 530 NJ 530 NJ 530 1220
+preplace netloc axi_gpio_0_ip2intc_irpt 1 0 6 20 550 NJ 550 NJ 550 NJ 550 NJ 550 1480
+preplace netloc ps7_0_axi_periph_M05_AXI 1 3 1 920
+preplace netloc ps7_0_axi_periph_M04_AXI 1 3 2 920 120 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 1 4 240 760 650 760 960 240 1260
+preplace netloc axi_gpio_1_GPIO 1 5 1 NJ
+preplace netloc ps7_0_axi_periph_M00_AXI 1 3 1 950
+preplace netloc Vaux15_1 1 0 4 NJ 740 NJ 740 NJ 740 NJ
+preplace netloc StateController_0_PIN_A 1 5 1 NJ
+preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 2 1 660
+levelinfo -pg 1 0 140 440 790 1100 1370 1530 -top 0 -bot 860
 ",
 }
 

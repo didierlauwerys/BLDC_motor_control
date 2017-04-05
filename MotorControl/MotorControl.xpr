@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Embedded/GITES/MotorControl/MotorControl.xpr">
+<Project Version="7" Minor="17" Path="D:/GITES/MotorControl/MotorControl.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c83fee922a2d48069266fb265f1477ce"/>
@@ -40,13 +40,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="5"/>
-    <Option Name="WTModelSimExportSim" Val="5"/>
-    <Option Name="WTQuestaExportSim" Val="5"/>
-    <Option Name="WTIesExportSim" Val="5"/>
-    <Option Name="WTVcsExportSim" Val="5"/>
-    <Option Name="WTRivieraExportSim" Val="5"/>
-    <Option Name="WTActivehdlExportSim" Val="5"/>
+    <Option Name="WTXSimExportSim" Val="8"/>
+    <Option Name="WTModelSimExportSim" Val="8"/>
+    <Option Name="WTQuestaExportSim" Val="8"/>
+    <Option Name="WTIesExportSim" Val="8"/>
+    <Option Name="WTVcsExportSim" Val="8"/>
+    <Option Name="WTRivieraExportSim" Val="8"/>
+    <Option Name="WTActivehdlExportSim" Val="8"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -62,20 +62,20 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_StateController_0_0/motorctrl_StateController_0_0.xci">
-          <Proxy FileSetName="motorctrl_StateController_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_PWM_0_0/motorctrl_PWM_0_0.xci">
           <Proxy FileSetName="motorctrl_PWM_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_processing_system7_0_0/motorctrl_processing_system7_0_0.xci">
-          <Proxy FileSetName="motorctrl_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_axi_gpio_1_1/motorctrl_axi_gpio_1_1.xci">
+          <Proxy FileSetName="motorctrl_axi_gpio_1_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_xbar_0/motorctrl_xbar_0.xci">
           <Proxy FileSetName="motorctrl_xbar_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_axi_gpio_1_1/motorctrl_axi_gpio_1_1.xci">
-          <Proxy FileSetName="motorctrl_axi_gpio_1_1"/>
+        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_axi_gpio_0_0/motorctrl_axi_gpio_0_0.xci">
+          <Proxy FileSetName="motorctrl_axi_gpio_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_xlconstant_0_0/motorctrl_xlconstant_0_0.xci">
+          <Proxy FileSetName="motorctrl_xlconstant_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_rst_ps7_0_100M_0/motorctrl_rst_ps7_0_100M_0.xci">
           <Proxy FileSetName="motorctrl_rst_ps7_0_100M_0"/>
@@ -84,15 +84,18 @@
         <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_xadc_wiz_0_0/motorctrl_xadc_wiz_0_0.xci">
           <Proxy FileSetName="motorctrl_xadc_wiz_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_axi_gpio_0_0/motorctrl_axi_gpio_0_0.xci">
-          <Proxy FileSetName="motorctrl_axi_gpio_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_xlconstant_0_0/motorctrl_xlconstant_0_0.xci">
-          <Proxy FileSetName="motorctrl_xlconstant_0_0"/>
+        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_processing_system7_0_0/motorctrl_processing_system7_0_0.xci">
+          <Proxy FileSetName="motorctrl_processing_system7_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="hdl/motorctrl.vhd"/>
         <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_PI_CTRL_0_0/motorctrl_PI_CTRL_0_0.xci">
           <Proxy FileSetName="motorctrl_PI_CTRL_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_StateController_0_0/motorctrl_StateController_0_0.xci">
+          <Proxy FileSetName="motorctrl_StateController_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="motorctrl.bd" FileRelPathName="ip/motorctrl_xlconcat_0_0/motorctrl_xlconcat_0_0.xci">
+          <Proxy FileSetName="motorctrl_xlconcat_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/motorctrl/hdl/motorctrl_wrapper.vhd">
@@ -174,21 +177,27 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="motorctrl_PI_CTRL_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/motorctrl_PI_CTRL_0_0">
-      <Config>
-        <Option Name="TopModule" Val="motorctrl_PI_CTRL_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="motorctrl_PWM_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/motorctrl_PWM_0_0">
       <Config>
         <Option Name="TopModule" Val="motorctrl_PWM_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="motorctrl_xlconcat_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/motorctrl_xlconcat_0_0">
+      <Config>
+        <Option Name="TopModule" Val="motorctrl_xlconcat_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="motorctrl_StateController_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/motorctrl_StateController_0_0">
       <Config>
         <Option Name="TopModule" Val="motorctrl_StateController_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="motorctrl_PI_CTRL_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/motorctrl_PI_CTRL_0_0">
+      <Config>
+        <Option Name="TopModule" Val="motorctrl_PI_CTRL_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -276,23 +285,37 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="motorctrl_PI_CTRL_0_0_synth_1" Type="Ft3:Synth" SrcSet="motorctrl_PI_CTRL_0_0" Part="xc7z010clg400-1" ConstrsSet="motorctrl_PI_CTRL_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/motorctrl_PI_CTRL_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="motorctrl_PWM_0_0_synth_1" Type="Ft3:Synth" SrcSet="motorctrl_PWM_0_0" Part="xc7z010clg400-1" ConstrsSet="motorctrl_PWM_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/motorctrl_PWM_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="motorctrl_PWM_0_0_synth_1" Type="Ft3:Synth" SrcSet="motorctrl_PWM_0_0" Part="xc7z010clg400-1" ConstrsSet="motorctrl_PWM_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/motorctrl_PWM_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="motorctrl_xlconcat_0_0_synth_1" Type="Ft3:Synth" SrcSet="motorctrl_xlconcat_0_0" Part="xc7z010clg400-1" ConstrsSet="motorctrl_xlconcat_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/motorctrl_xlconcat_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="motorctrl_StateController_0_0_synth_1" Type="Ft3:Synth" SrcSet="motorctrl_StateController_0_0" Part="xc7z010clg400-1" ConstrsSet="motorctrl_StateController_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/motorctrl_StateController_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="motorctrl_PI_CTRL_0_0_synth_1" Type="Ft3:Synth" SrcSet="motorctrl_PI_CTRL_0_0" Part="xc7z010clg400-1" ConstrsSet="motorctrl_PI_CTRL_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/motorctrl_PI_CTRL_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -423,9 +446,11 @@
       </Strategy>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="motorctrl_PI_CTRL_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="motorctrl_PI_CTRL_0_0" Description="Default settings for Implementation." SynthRun="motorctrl_PI_CTRL_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="motorctrl_PWM_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="motorctrl_PWM_0_0" Description="Default settings for Implementation." SynthRun="motorctrl_PWM_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -438,9 +463,11 @@
       </Strategy>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="motorctrl_PWM_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="motorctrl_PWM_0_0" Description="Default settings for Implementation." SynthRun="motorctrl_PWM_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="motorctrl_xlconcat_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="motorctrl_xlconcat_0_0" Description="Default settings for Implementation." SynthRun="motorctrl_xlconcat_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -454,6 +481,23 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="motorctrl_StateController_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="motorctrl_StateController_0_0" Description="Default settings for Implementation." SynthRun="motorctrl_StateController_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="motorctrl_PI_CTRL_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="motorctrl_PI_CTRL_0_0" Description="Default settings for Implementation." SynthRun="motorctrl_PI_CTRL_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
           <Desc>Default settings for Implementation.</Desc>

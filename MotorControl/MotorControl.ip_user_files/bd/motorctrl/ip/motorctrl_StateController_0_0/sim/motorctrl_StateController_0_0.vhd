@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:StateController:1.0
--- IP Revision: 4
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -60,6 +60,7 @@ ENTITY motorctrl_StateController_0_0 IS
     PIN_B : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     PIN_C : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     TRIGGER : OUT STD_LOGIC;
+    intrpt : OUT STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -98,6 +99,7 @@ ARCHITECTURE motorctrl_StateController_0_0_arch OF motorctrl_StateController_0_0
       PIN_B : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       PIN_C : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       TRIGGER : OUT STD_LOGIC;
+      intrpt : OUT STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -155,6 +157,7 @@ BEGIN
       PIN_B => PIN_B,
       PIN_C => PIN_C,
       TRIGGER => TRIGGER,
+      intrpt => intrpt,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,

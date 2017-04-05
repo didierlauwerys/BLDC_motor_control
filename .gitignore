@@ -49,3 +49,5 @@ Temporary Items
 *.tree
 *.xml
 *.markers
+MotorControl/MotorControl.runs/motorctrl_StateController_0_0_synth_1/runme.log
+*.log

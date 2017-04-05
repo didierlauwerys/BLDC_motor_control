@@ -1,10 +1,10 @@
 // Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
-// Date        : Tue Apr 04 15:00:37 2017
+// Date        : Wed Apr 05 11:26:50 2017
 // Host        : DL-PC running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               d:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PI_CTRL_0_0/motorctrl_PI_CTRL_0_0_sim_netlist.v
+//               D:/GITES/MotorControl/MotorControl.srcs/sources_1/bd/motorctrl/ip/motorctrl_PI_CTRL_0_0/motorctrl_PI_CTRL_0_0_sim_netlist.v
 // Design      : motorctrl_PI_CTRL_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -15,7 +15,8 @@
 (* CHECK_LICENSE_TYPE = "motorctrl_PI_CTRL_0_0,PI_CTRL_v1_0,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "PI_CTRL_v1_0,Vivado 2016.4" *) 
 (* NotValidForBitStream *)
 module motorctrl_PI_CTRL_0_0
-   (s00_axi_awaddr,
+   (intrpt,
+    s00_axi_awaddr,
     s00_axi_awprot,
     s00_axi_awvalid,
     s00_axi_awready,
@@ -36,6 +37,7 @@ module motorctrl_PI_CTRL_0_0
     s00_axi_rready,
     s00_axi_aclk,
     s00_axi_aresetn);
+  output intrpt;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) input [9:0]s00_axi_awaddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
@@ -55,8 +57,8 @@ module motorctrl_PI_CTRL_0_0
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI RRESP" *) output [1:0]s00_axi_rresp;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI RVALID" *) output s00_axi_rvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) input s00_axi_rready;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) input s00_axi_aclk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) input s00_axi_aresetn;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK, xilinx.com:signal:clock:1.0 s00_axi_aclk CLK" *) input s00_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST, xilinx.com:signal:reset:1.0 s00_axi_aresetn RST" *) input s00_axi_aresetn;
 
   wire \<const0> ;
   wire s00_axi_aclk;

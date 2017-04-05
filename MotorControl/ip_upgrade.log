@@ -1,6 +1,134 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+| Date         : Wed Apr 05 11:23:49 2017
+| Host         : DL-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'motorctrl_PI_CTRL_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of motorctrl_PI_CTRL_0_0 (xilinx.com:user:PI_CTRL:1.0) from (Rev. 2) to (Rev. 3)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'motorctrl_PI_CTRL_0_0'.
+
+
+-Upgrade has added interface 's00_axi_aclk' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 's00_axi_aresetn' (xilinx.com:signal:reset:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'motorctrl_PI_CTRL_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'intrpt'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+| Date         : Wed Apr 05 11:18:53 2017
+| Host         : DL-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'motorctrl_StateController_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of motorctrl_StateController_0_0 (xilinx.com:user:StateController:1.0) from (Rev. 4) to (Rev. 5)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'motorctrl_StateController_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'intrpt'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+| Date         : Wed Apr 05 11:14:51 2017
+| Host         : DL-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'motorctrl_PWM_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of motorctrl_PWM_0_0 (xilinx.com:user:PWM:1.0) from (Rev. 4) to (Rev. 5)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'motorctrl_PWM_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'intrpt'
+
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+| Date         : Wed Apr 05 10:21:32 2017
+| Host         : DL-PC running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'motorctrl_StateController_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of motorctrl_StateController_0_0 (xilinx.com:user:StateController:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
 | Date         : Wed Apr 05 10:06:03 2017
 | Host         : PC-Lenovo running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

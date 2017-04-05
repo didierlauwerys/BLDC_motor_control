@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:StateController:1.0
--- IP Revision: 4
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -60,6 +60,7 @@ ENTITY motorctrl_StateController_0_0 IS
     PIN_B : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     PIN_C : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     TRIGGER : OUT STD_LOGIC;
+    intrpt : OUT STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -98,6 +99,7 @@ ARCHITECTURE motorctrl_StateController_0_0_arch OF motorctrl_StateController_0_0
       PIN_B : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       PIN_C : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       TRIGGER : OUT STD_LOGIC;
+      intrpt : OUT STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -126,7 +128,7 @@ ARCHITECTURE motorctrl_StateController_0_0_arch OF motorctrl_StateController_0_0
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF motorctrl_StateController_0_0_arch : ARCHITECTURE IS "motorctrl_StateController_0_0,StateController_v1_0,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF motorctrl_StateController_0_0_arch: ARCHITECTURE IS "motorctrl_StateController_0_0,StateController_v1_0,{x_ipProduct=Vivado 2016.4,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=StateController,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}";
+  ATTRIBUTE CORE_GENERATION_INFO OF motorctrl_StateController_0_0_arch: ARCHITECTURE IS "motorctrl_StateController_0_0,StateController_v1_0,{x_ipProduct=Vivado 2016.4,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=StateController,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=5}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT";
@@ -161,6 +163,7 @@ BEGIN
       PIN_B => PIN_B,
       PIN_C => PIN_C,
       TRIGGER => TRIGGER,
+      intrpt => intrpt,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,

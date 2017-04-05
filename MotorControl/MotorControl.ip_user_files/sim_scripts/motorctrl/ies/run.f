@@ -78,16 +78,18 @@
 -endlib
 -makelib ies/xil_defaultlib \
   "../../../bd/motorctrl/ip/motorctrl_axi_gpio_1_1/sim/motorctrl_axi_gpio_1_1.vhd" \
-  "../../../bd/motorctrl/ipshared/8664/hdl/PWM_v1_0_S00_AXI.vhd" \
-  "../../../bd/motorctrl/ipshared/8664/hdl/PWM_v1_0.vhd" \
+  "../../../bd/motorctrl/ipshared/a578/hdl/PWM_v1_0_S00_AXI.vhd" \
+  "../../../bd/motorctrl/ipshared/a578/hdl/PWM_v1_0.vhd" \
   "../../../bd/motorctrl/ip/motorctrl_PWM_0_0/sim/motorctrl_PWM_0_0.vhd" \
-  "../../../bd/motorctrl/ipshared/3a92/hdl/StateController_v1_0_S00_AXI.vhd" \
-  "../../../bd/motorctrl/ipshared/3a92/hdl/StateController_v1_0.vhd" \
+  "../../../bd/motorctrl/ipshared/35d2/hdl/StateController_v1_0_S00_AXI.vhd" \
+  "../../../bd/motorctrl/ipshared/35d2/hdl/StateController_v1_0.vhd" \
   "../../../bd/motorctrl/ip/motorctrl_StateController_0_0/sim/motorctrl_StateController_0_0.vhd" \
-  "../../../bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0_S00_AXI.vhd" \
-  "../../../bd/motorctrl/ipshared/666a/hdl/PI_CTRL_v1_0.vhd" \
+  "../../../bd/motorctrl/ipshared/b2a1/hdl/PI_CTRL_v1_0_S00_AXI.vhd" \
+  "../../../bd/motorctrl/ipshared/b2a1/hdl/PI_CTRL_v1_0.vhd" \
   "../../../bd/motorctrl/ip/motorctrl_PI_CTRL_0_0/sim/motorctrl_PI_CTRL_0_0.vhd" \
   "../../../bd/motorctrl/hdl/motorctrl.vhd" \
+  "../../../bd/motorctrl/ipshared/2e37/xlconcat.vhd" \
+  "../../../bd/motorctrl/ip/motorctrl_xlconcat_0_0/sim/motorctrl_xlconcat_0_0.vhd" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_11 \
   "../../../../MotorControl.srcs/sources_1/bd/motorctrl/ipshared/df1b/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
